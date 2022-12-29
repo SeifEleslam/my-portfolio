@@ -2,6 +2,7 @@ import Head from "next/head";
 import { Main } from "../src/components/Main";
 import { useEffect, useState } from "react";
 import TargetSVG from "../src/components/TargetSVG";
+import CoolBg from "../src/components/CoolBg";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -33,10 +34,10 @@ export default function Home() {
       </div> */}
       <div
         className={
-          " md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full inset-0 z-[0] text-right fixed"
+          "opacity-75 md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full inset-0 z-[0] text-right fixed"
         }
       >
-        <TargetSVG motion={false} />
+        <CoolBg />
       </div>
       <Main />
     </>

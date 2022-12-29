@@ -12,11 +12,11 @@ export default function SuitSVG() {
       <defs>
         <filter id="shadow">
           <feDropShadow
-            dx="-10"
-            dy="10"
-            stdDeviation="10"
+            dx="0"
+            dy="0"
+            stdDeviation="5"
             floodColor="#aaa"
-            floodOpacity=".3"
+            floodOpacity=".8"
           />
         </filter>
       </defs>

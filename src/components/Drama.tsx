@@ -18,7 +18,7 @@ export default function Drama({
         ref={ref}
         className={
           (inView ? " animate-zoom shadow-gold " : " opacity-0 ") +
-          " bg-[#222]/25 backdrop-blur lg:ml-[12vw] mt-[15vh] lg:w-[45%] w-auto z-10 relative duration-[1000ms]"
+          " bg-[#222]/25 backdrop-blur overflow-hidden lg:ml-[12vw] mt-[15vh] lg:w-[45%] w-auto z-10 relative duration-[1000ms]"
         }
       >
         <div
@@ -32,16 +32,20 @@ export default function Drama({
             } h-full ml-0 w-[0%] bg-[#282c34] `}
           ></div>
         </div>
-        <div className="my-[2vh] bg-[#d8b15d] shadow h-[1vh] rounded-full"></div>
-        <p className="leading-[8vh] Alumni text-[#aaa] text-shadow">Manners</p>
-        <p className="leading-[8vh] Alumni text-[#aaa] text-shadow">Maketh</p>
-        <p className="leading-[8vh] Alumni text-[#aaa] text-shadow">Man</p>
-        <div className="my-[2vh] bg-[#d8b15d] shadow h-[1vh] rounded-full"></div>
+        <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
+        <p className="leading-[8vh] Alumni text-[#d8b15d] text-shadow">
+          Manners
+        </p>
+        <p className="leading-[8vh] Alumni text-[#d8b15d] text-shadow">
+          Maketh
+        </p>
+        <p className="leading-[8vh] Alumni text-[#d8b15d] text-shadow">Man</p>
+        <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
       </div>
 
       <div
         className={
-          (inView ? " animate-showleft " : " opacity-0 ") +
+          (inView2 ? " animate-showleft " : " opacity-0 ") +
           " md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full absolute inset-0 z-[0] text-right "
         }
       >
@@ -67,7 +71,7 @@ export default function Drama({
           }}
           className={
             (inView ? "animate-rotatescroll " : " opacity-0 ") +
-            "  mt-[3vh] rotate-90 text-[#e0bd88] text-[5vh] pl-[1vh] duration-[400ms] hover:translate-y-[1vh] text-shadow"
+            "  mt-[3vh] rotate-90 text-[#d8b15d] text-[5vh] pl-[1vh] duration-[400ms] hover:translate-y-[1vh] text-shadow"
           }
         >
           Scroll?
