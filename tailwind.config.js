@@ -11,16 +11,19 @@ module.exports = {
         'gold': '0 11px 41px 0 rgba(216, 177, 93, .5)'
       },
       animation: {
-        zoom: 'zoom 1.9s ease-in-out',
-        zoomreverse: 'zoom 1.9s ease-in-out reverse',
-        rotatescroll: 'rotatescroll 1.5s ease-in-out ',
-        slideup: 'slideup 1s ease-in-out',
-        slideright: 'slideright 1.4s ease-in-out',
-        sliderightreverse: 'slideright 1.4s ease-in-out reverse',
-        hesitate: 'hesitate 1.5s ease-in-out',
-        hesitatereverse: 'hesitate 1.5s ease-in-out reverse',
-        showup: 'showup 1.5s ease-in-out',
-        showleft: 'showleft 1s ease-in-out'
+        zoom: 'zoom 1.9s ease-in-out forwards',
+        zoomreverse: 'zoom 1.9s ease-in-out reverse forwards',
+        rotatescroll: 'rotatescroll 1.5s ease-in-out forwards',
+        slideup: 'slideup 1s ease-in-out forwards',
+        slideright: 'slideright 1.4s ease-in-out forwards',
+        sliderightreverse: 'slideright 1.4s ease-in-out reverse forwards',
+        hesitate: 'hesitate 1.5s ease-in-out forwards',
+        hesitatereverse: 'hesitate 1.5s ease-in-out reverse forwards',
+        showup: 'showup 1.5s ease-in-out forwards',
+        hideup: 'hideup 1.5s ease-in-out forwards',
+        showdown: 'showdown 1.5s ease-in-out forwards',
+        hidedown: 'hidedown 1.5s ease-in-out forwards',
+        showleft: 'showleft 1s ease-in-out forwards'
       },
       keyframes: {
         zoom: {
@@ -44,8 +47,20 @@ module.exports = {
           '100%': { width: '100%'},
         },
         showup: {
-          '0%': { transform: 'translate(0, 100vh)'},
-          '100%': { transform: 'translate(0,0)'},
+          '0%': { transform: 'translate(0, 100vh)', height:"0"},
+          '100%': { transform: 'translate(0,0)', height:"100%"},
+        },
+        hideup: {
+          '0%': { transform: 'translate(0, 0)'},
+          '100%': { transform: 'translate(0,-100vh)', height:"0"},
+        },
+        showdown: {
+          '0%': { transform: 'translate(0, -100vh)', height:"0"}, 
+          '100%': { transform: 'translate(0,0)', height:"100%"},
+        },
+        hidedown: {
+          '0%': { transform: 'translate(0, 0)'},
+          '100%': { transform: 'translate(0,100vh)', height:"0"},
         },
         showleft: {
           '0%': { transform: 'translate(100px)', opacity:0},
