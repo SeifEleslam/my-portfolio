@@ -3,6 +3,18 @@ import { useEffect, useRef, useState } from "react";
 import { TiChevronRightOutline, TiChevronLeftOutline } from "react-icons/ti";
 import { useInView } from "react-intersection-observer";
 import { Info, Skills } from "./AboutSections";
+import {
+  Css,
+  Docker,
+  Golang,
+  Html,
+  Js,
+  Nextjs,
+  Postgres,
+  React,
+  Tailwind,
+  Typescript,
+} from "./Skills";
 
 export default function About({ state }: { state: string }) {
   const [des, setDes] = useState("aboutMe");
@@ -138,17 +150,62 @@ export default function About({ state }: { state: string }) {
                 " duration-1000 absolute ease-in-out w-full h-full overflow-hidden"
               }
             >
-              <h1 className="mb-4 text-shadow sm:text-[25px] lg:text-[35px] text-[2rem] text-[#d8b15d] text-center">
-                Technical Skills
-              </h1>
-              <div className="p-[1vw] text-left w-full">
-                <p className="text-[#555] text-[4vh] sm:text-[20px] lg:text-[30px] ">
-                  Hello, 👋
-                  <br />
-                  My name is SEIFELESLAM
-                  <br />I am a passionate web designer, who seeks perfection and
-                  gives a lot of attention to details.
-                </p>
+              <div className=" ">
+                <h1 className="mb-4 text-shadow sm:text-[25px] lg:text-[35px] text-[2rem] text-[#d8b15d] text-center">
+                  Technical Skills
+                </h1>
+                <div className="p-[1vw] text-left w-full">
+                  <div className="w-full h-[10vh] flex">
+                    <p className="my-auto text-[#aaa] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] ">
+                      Experienced At:
+                    </p>
+                    <div className="h-full flex-1">
+                      <Html />
+                    </div>
+                    <div className="h-full flex-1">
+                      <Css />
+                    </div>
+                    <div className="h-full flex-1">
+                      <Js />
+                    </div>
+                    <div className="h-full flex-1">
+                      <React />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-[1vw] text-left w-full">
+                  <div className="w-full h-[10vh] flex">
+                    <p className="text-[#aaa] my-auto text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] ">
+                      Comfortable With:
+                    </p>
+                    <div className="h-full flex-1">
+                      <Typescript />
+                    </div>
+                    <div className="h-full flex-1">
+                      <Tailwind />
+                    </div>
+                  </div>
+                </div>
+                <div className="p-[1vw] text-left w-full">
+                  <div className="w-full h-[10vh] flex">
+                    <p className="text-[#aaa] my-auto text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] ">
+                      Familiar With:
+                    </p>
+                    <div className="h-full flex-1">
+                      <Postgres />
+                    </div>
+                    <div className="h-full flex-1">
+                      <Nextjs />
+                    </div>
+                    <div className="h-full flex-1">
+                      <Golang />
+                    </div>
+
+                    <div className="h-full flex-1">
+                      <Docker />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
