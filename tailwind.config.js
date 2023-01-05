@@ -8,22 +8,24 @@ module.exports = {
     extend: {
       boxShadow: {
         '3xl': '0 11px 41px 0 rgba(0, 0, 0, 1)',
-        'gold': '0 11px 41px 0 rgba(216, 177, 93, .5)'
+        'gold': '0 11px 41px 0 #aaa'
       },
       animation: {
-        zoom: 'zoom 1.9s ease-in-out forwards',
+        zoom: 'zoom 1.2s ease-in-out forwards',
         zoomreverse: 'zoom 1.9s ease-in-out reverse forwards',
         rotatescroll: 'rotatescroll 1.5s ease-in-out forwards',
         slideup: 'slideup 1s ease-in-out forwards',
-        slideright: 'slideright 1.4s ease-in-out forwards',
-        sliderightreverse: 'slideright 1.4s ease-in-out reverse forwards',
-        hesitate: 'hesitate 1.5s ease-in-out forwards',
-        hesitatereverse: 'hesitate 1.5s ease-in-out reverse forwards',
+        slideright: 'slideright 1s ease-in-out forwards',
+        sliderightreverse: 'slideright 1s ease-in-out reverse forwards',
+        hesitate: 'hesitate 1.1s ease-in-out forwards',
+        hesitatereverse: 'hesitate 1.1s ease-in-out reverse forwards',
         showup: 'showup 1.5s ease-in-out forwards',
         hideup: 'hideup 1.5s ease-in-out forwards',
         showdown: 'showdown 1.5s ease-in-out forwards',
         hidedown: 'hidedown 1.5s ease-in-out forwards',
-        showleft: 'showleft 1s ease-in-out forwards'
+        showleft: 'showleft 1s ease-in-out forwards',
+        hideleft: 'hideleft 1s ease-in-out forwards',
+
       },
       keyframes: {
         zoom: {
@@ -39,7 +41,7 @@ module.exports = {
           '100%': { height: '0'},
         },
         slideright: {
-          '0%': { width: '100%',  },
+          '0%': { width: '100%'},
           '100%': { width: '0', },
         },
         hesitate: {
@@ -63,8 +65,12 @@ module.exports = {
           '100%': { transform: 'translate(0,100vh)', height:"0"},
         },
         showleft: {
-          '0%': { transform: 'translate(100px)', opacity:0},
+          '0%': { transform: 'translate(50%)', opacity:0},
           '100%': { transform: 'translate(0)', opacity:1},
+        },
+        hideleft: {
+          '0%': { transform: 'translate(0)', opacity:1},
+          '100%': { transform: 'translate(50%)', opacity:0},
         },
       }
     },

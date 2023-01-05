@@ -15,7 +15,7 @@ export default function SuitSVG() {
             dx="0"
             dy="0"
             stdDeviation="5"
-            floodColor="#aaa"
+            floodColor="#000"
             floodOpacity=".8"
           />
         </filter>

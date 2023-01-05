@@ -2,7 +2,7 @@ import LightSVG from "./LightSVG";
 
 export default function Header() {
   return (
-    <div className="w-full h-fit fixed z-50 p-1">
+    <div className="w-full h-fit fixed z-[200] p-1">
       <nav className="z-[100] relative flex items-center px-[10vw] bg-transparent">
         <div className="mx-auto flex w-full items-center ">
           <div className="w-[50%] relative lg:text-left block flex items-center">

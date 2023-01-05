@@ -165,8 +165,6 @@ export function Main() {
     window.addEventListener("keyup", keyNav);
     window.addEventListener("touchstart", touchStart);
     window.addEventListener("touchmove", touchMove);
-    window.addEventListener("deviceorientation", screenOri, true);
-
     return () => {
       window.removeEventListener("wheel", slide);
       window.removeEventListener("mousewheel", slide);
@@ -175,7 +173,6 @@ export function Main() {
       window.removeEventListener("keyup", keyNav);
       window.removeEventListener("touchstart", touchStart);
       window.removeEventListener("touchmove", touchMove);
-      window.removeEventListener("deviceorientation", screenOri, true);
     };
   });
 

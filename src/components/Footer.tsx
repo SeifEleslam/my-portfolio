@@ -23,7 +23,7 @@ export default function Footer({ handleState, linkState }: FooterProps) {
   };
 
   return (
-    <div className="lg:w-fit fixed flex z-50 mt-[2vh] lg:left-0 left-[.5vw] lg:right-auto right-0 mx-auto lg:top-10 bottom-0 lg:my-auto duration-[600ms] rounded-full">
+    <div className="lg:w-fit fixed flex z-[99] mt-[2vh] lg:left-0 left-[.5vw] lg:right-auto right-0 mx-auto lg:top-10 bottom-0 lg:my-auto duration-[600ms] rounded-full">
       {/* <button
         onClick={() => {
           setClicked(true);
@@ -36,12 +36,12 @@ export default function Footer({ handleState, linkState }: FooterProps) {
       </button> */}
       <p
         id="des"
-        className="border-y-[.5vh] absolute mx-[1vw] my-[1vh] bottom-0 left-0 max-w-[30%] md:max-w-[100%] lg:bottom-10 border-[#d8b15d] opacity-0 invisible duration-[600ms] p-1 text-shadow rounded text-[#aaa]"
+        className="border-y-[.5vh] absolute mx-[1vw] my-[1vh] right-0 bottom-0 max-w-[30%] md:max-w-[100%] lg:bottom-10 border-[#d8b15d] opacity-0 invisible duration-[600ms] p-1 text-shadow rounded text-[#aaa]"
       >
         {hover}
       </p>
 
-      <div className="lg:flex-col flex lg:my-auto mx-auto z-[1000] lg:top-0 lg:left-auto lg:right-auto left-0 right-0 bottom-0 h-fit w-fit py-2 duration-[600ms] overflow-hidden">
+      <div className="lg:flex-col flex lg:my-auto mx-auto z-[200] lg:top-0 lg:left-auto lg:right-auto left-0 right-0 bottom-0 h-fit w-fit py-2 duration-[600ms] overflow-hidden">
         <div
           onMouseEnter={() => {
             showDes("Dramatic Entrance");

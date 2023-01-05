@@ -24,12 +24,12 @@ export default function Drama({
         <div
           className={`${
             inView ? "animate-slideright" : ""
-          } right-0 w-[0] h-full absolute bg-[#edc769]`}
+          } right-0 h-full absolute bg-[#edc769]`}
         >
           <div
             className={`${
               inView ? "animate-hesitate" : ""
-            } h-full ml-0 w-[0%] bg-[#282c34] `}
+            } h-full ml-0 bg-[#282c34] `}
           ></div>
         </div>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
@@ -45,8 +45,9 @@ export default function Drama({
 
       <div
         className={
-          (inView2 ? " animate-showleft " : " opacity-0 ") +
-          " md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full absolute inset-0 z-[0] text-right "
+          (inView2 ? " animate-showleft " : " ") +
+          (state !== "drama" ? "animate-hideleft " : " ") +
+          " md:pl-[30%] lg:pl-[50%] pl-0 duration-500 opacity-0 h-full w-full absolute inset-0 z-[0] text-right "
         }
       >
         <SuitSVG />

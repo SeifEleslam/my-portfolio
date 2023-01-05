@@ -19,6 +19,7 @@ export default function Home() {
   //     window.removeEventListener("mousemove", mouseMove);
   //   };
   // });
+
   return (
     <>
       <Head>
@@ -33,11 +34,14 @@ export default function Home() {
         </div>
       </div> */}
       <div
+        id="scene"
         className={
           "opacity-75 md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full inset-0 z-[0] text-right fixed"
         }
       >
-        <CoolBg />
+        <div data-depth="0.6" className="w-full h-full">
+          <TargetSVG motion={true} />
+        </div>
       </div>
       <Main />
     </>
