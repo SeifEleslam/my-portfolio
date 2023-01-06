@@ -10,7 +10,7 @@ import TargetSVG from "./TargetSVG";
 import CoolCircle from "./CoolCircle";
 
 export function Main() {
-  const appTable = ["drama", "about", "evidence"];
+  const appTable = ["drama", "about", "projects"];
   const [state, setState] = useState(appTable[0]);
   const [curr, setCurr] = useState(0);
   const ref = useRef(null);
@@ -210,8 +210,8 @@ export function Main() {
       <Drama handleState={handleState} state={state} />
       <About state={state} />
       <Element
-        name="evidence"
-        id="evidence"
+        name="projects"
+        id="projects"
         className="text-white overflow-hidden w-full h-full"
       >
         <h1>ev</h1>

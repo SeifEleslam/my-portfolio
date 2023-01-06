@@ -30,7 +30,7 @@ export default function About({ state }: { state: string }) {
         ref={ref}
         className={
           (inView ? " animate-zoom shadow-3xl " : " opacity-0 ") +
-          " relative origin-left z-[100] mt-[12vh] mx-auto md:ml-[10vw] md:w-2/3 w-[95%] h-2/3 duration-500"
+          " relative origin-left z-[100] mt-[12vh] h-2/3  mx-auto md:ml-[10vw] md:w-2/3 w-[95%] duration-500"
         }
       >
         <div
@@ -43,7 +43,7 @@ export default function About({ state }: { state: string }) {
             className={
               (inView && des === "aboutMe"
                 ? " h-full  translate-y-0 "
-                : " h-0 translate-y-[-300%] ") +
+                : " h-0 translate-y-[-600%] ") +
               " duration-[1500ms] ease-in-out"
             }
           >
@@ -53,7 +53,7 @@ export default function About({ state }: { state: string }) {
             className={
               (inView && des === "skills"
                 ? "h-full  translate-y-0 "
-                : " h-0 translate-y-[300%]   ") +
+                : " h-0 translate-y-[600%]   ") +
               " duration-[1500ms] ease-in-out"
             }
           >

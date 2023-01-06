@@ -67,12 +67,13 @@ export default function Drama({
           Are we gonna stand here all day or you gonna
         </p>
         <button
+          id="scroll"
           onClick={() => {
             handleState("about");
           }}
           className={
             (inView ? "animate-rotatescroll " : " opacity-0 ") +
-            "  mt-[3vh] rotate-90 text-[#d8b15d] text-[5vh] pl-[1vh] duration-[400ms] hover:translate-y-[1vh] text-shadow"
+            "  mt-[3vh] rotate-90 text-[#d8b15d] text-[5vh] pl-[1vh] duration-[400ms] active:translate-y-[2vh] text-shadow"
           }
         >
           Scroll?

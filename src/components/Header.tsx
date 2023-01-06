@@ -1,4 +1,5 @@
 import LightSVG from "./LightSVG";
+import { Github, LinkedIn } from "./Links";
 
 export default function Header() {
   return (
@@ -6,16 +7,20 @@ export default function Header() {
       <nav className="z-[100] relative flex items-center px-[10vw] bg-transparent">
         <div className="mx-auto flex w-full items-center ">
           <div className="w-[50%] relative lg:text-left block flex items-center">
-            <button className="h-[6vh] border-[1px] rounded-lg border-[#d8b15d]">
+            <a className="cursor-pointer h-[3rem] hover:shadow-gold duration-1000 flex border-[1px] rounded-lg border-[#d8b15d]">
               <LightSVG />
-            </button>
+              <span className="mr-[.7rem] block my-auto sm:inline-block hidden text-[#d8b15d] duration-[500ms] rounded-lg mx-auto durarion-600 text-right text-[1.5rem] text-shadow">
+                SEIFELELAM
+              </span>
+            </a>
           </div>
-          <div className="items-center justify-center flex text-right w-[50%] h-[6vh]">
-            <p className="mx-1 hover:text-[#d8b15d] duration-[500ms] rounded-lg mx-auto durarion-600 text-right text-[2.2vh] text-shadow text-[#aaa]">
-              SEIFELELAM
-            </p>
-            <button className="h-[4vh] mx-1"></button>
-            <button className="h-[4vhnpm ] mx-1"></button>
+          <div className="items-center justify-end flex text-right w-[50%] h-[6vh]">
+            <a className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]">
+              <Github />
+            </a>
+            <a className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]">
+              <LinkedIn />
+            </a>
           </div>
         </div>
       </nav>

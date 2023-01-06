@@ -8,12 +8,13 @@ module.exports = {
     extend: {
       boxShadow: {
         '3xl': '0 11px 41px 0 rgba(0, 0, 0, 1)',
-        'gold': '0 11px 41px 0 #aaa'
+        'gold': '0 11px 41px 0 #aaa',
+        'footer': '0 0 10px 1px #000'
       },
       animation: {
-        zoom: 'zoom 1.2s ease-in-out forwards',
+        zoom: 'zoom 1.4s ease-in-out forwards',
         zoomreverse: 'zoom 1.9s ease-in-out reverse forwards',
-        rotatescroll: 'rotatescroll 1.5s ease-in-out forwards',
+        rotatescroll: 'rotatescroll 1.5s ease-in-out',
         slideup: 'slideup 1s ease-in-out forwards',
         slideright: 'slideright 1s ease-in-out forwards',
         sliderightreverse: 'slideright 1s ease-in-out reverse forwards',
@@ -29,7 +30,7 @@ module.exports = {
       },
       keyframes: {
         zoom: {
-          '0%': { transform: 'translate(-30px) scale(0.9)'},
+          '0%': { transform: 'translate(-30px) scale(0.8)'},
           '100%': { transform: 'translate(0) scale(1)'},
         },
         rotatescroll: {

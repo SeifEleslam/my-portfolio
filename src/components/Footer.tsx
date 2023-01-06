@@ -23,7 +23,7 @@ export default function Footer({ handleState, linkState }: FooterProps) {
   };
 
   return (
-    <div className="lg:w-fit fixed flex z-[99] mt-[2vh] lg:left-0 left-[.5vw] lg:right-auto right-0 mx-auto lg:top-10 bottom-0 lg:my-auto duration-[600ms] rounded-full">
+    <div className="xl:w-fit fixed flex z-[99] mt-[2vh] xl:left-0 left-[.5vw] xl:right-auto right-0 mx-auto xl:top-10 bottom-0 xl:my-auto duration-[600ms] rounded-full">
       {/* <button
         onClick={() => {
           setClicked(true);
@@ -36,12 +36,12 @@ export default function Footer({ handleState, linkState }: FooterProps) {
       </button> */}
       <p
         id="des"
-        className="border-y-[.5vh] absolute mx-[1vw] my-[1vh] right-0 bottom-0 max-w-[30%] md:max-w-[100%] lg:bottom-10 border-[#d8b15d] opacity-0 invisible duration-[600ms] p-1 text-shadow rounded text-[#aaa]"
+        className="border-y-[.5vh] absolute mx-[1vw] my-[1vh] left-0 bottom-0 max-w-[30%] md:max-w-[100%] xl:bottom-10 border-[#d8b15d] opacity-0 invisible duration-[600ms] p-1 text-shadow rounded text-[#aaa]"
       >
         {hover}
       </p>
 
-      <div className="lg:flex-col flex lg:my-auto mx-auto z-[200] lg:top-0 lg:left-auto lg:right-auto left-0 right-0 bottom-0 h-fit w-fit py-2 duration-[600ms] overflow-hidden">
+      <div className="xl:flex-col flex xl:my-auto mx-auto z-[200] xl:top-0 xl:left-auto xl:right-auto left-0 right-0 bottom-0 h-fit w-fit py-2 duration-[600ms] overflow-hidden">
         <div
           onMouseEnter={() => {
             showDes("Dramatic Entrance");
@@ -53,7 +53,7 @@ export default function Footer({ handleState, linkState }: FooterProps) {
             (linkState === "drama"
               ? "w-[7vw] bg-[#d8b15d]"
               : "w-[4vw] bg-[#aaa]") +
-            " my-[2vh] mx-[1vw] cursor-pointer duration-[600ms] hover:w-[7vw] h-[1vh] rounded-full"
+            " my-[2vh] mx-[1vw] cursor-pointer duration-[600ms] ease-in-out shadow-footer hover:w-[7vw] h-[1vh] rounded-full"
           }
           onClick={() => {
             handleState("drama");
@@ -71,10 +71,46 @@ export default function Footer({ handleState, linkState }: FooterProps) {
             (linkState === "about"
               ? "w-[7vw] bg-[#d8b15d]"
               : "w-[4vw] bg-[#aaa]") +
-            " my-[2vh] mx-[1vw] cursor-pointer duration-[600ms] hover:w-[7vw] h-[1vh] rounded-full"
+            " my-[2vh] mx-[1vw] cursor-pointer duration-[600ms] ease-in-out shadow-footer hover:w-[7vw] h-[1vh] rounded-full"
           }
           onClick={() => {
             handleState("about");
+          }}
+        ></div>
+
+        <div
+          onMouseEnter={() => {
+            showDes("Projects");
+          }}
+          onMouseLeave={() => {
+            hideDes();
+          }}
+          className={
+            (linkState === "projects"
+              ? "w-[7vw] bg-[#d8b15d]"
+              : "w-[4vw] bg-[#aaa]") +
+            " my-[2vh] mx-[1vw] cursor-pointer duration-[600ms] ease-in-out shadow-footer hover:w-[7vw] h-[1vh] rounded-full"
+          }
+          onClick={() => {
+            handleState("projects");
+          }}
+        ></div>
+
+        <div
+          onMouseEnter={() => {
+            showDes("Contact");
+          }}
+          onMouseLeave={() => {
+            hideDes();
+          }}
+          className={
+            (linkState === "contact"
+              ? "w-[7vw] bg-[#d8b15d]"
+              : "w-[4vw] bg-[#aaa]") +
+            " my-[2vh] mx-[1vw] cursor-pointer duration-[600ms] ease-in-out shadow-footer hover:w-[7vw] h-[1vh] rounded-full"
+          }
+          onClick={() => {
+            handleState("contact");
           }}
         ></div>
       </div>
