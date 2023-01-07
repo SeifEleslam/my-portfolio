@@ -29,21 +29,21 @@ export default function About({ state }: { state: string }) {
       <div
         ref={ref}
         className={
-          (inView ? " animate-zoom shadow-3xl " : " opacity-0 ") +
+          (inView ? " animate-zoom  " : " opacity-0 ") +
           " relative origin-left z-[100] mt-[12vh] h-2/3  mx-auto md:ml-[10vw] md:w-2/3 w-[95%] duration-500"
         }
       >
         <div
           className={
             // ()+
-            "z-[101] absolute lg:w-[8rem] w-[6rem] p-2 h-[8rem] -bottom-[4rem] inset-x-0 mx-auto overflow-hidden"
+            "z-[101] absolute lg:w-[8rem] w-[6rem] p-2 h-[8rem] -bottom-[4rem] inset-x-0 mx-auto "
           }
         >
           <div
             className={
               (inView && des === "aboutMe"
                 ? " h-full  translate-y-0 "
-                : " h-0 translate-y-[-600%] ") +
+                : " h-0 opacity-0 translate-y-[300%] ") +
               " duration-[1500ms] ease-in-out"
             }
           >
@@ -53,7 +53,7 @@ export default function About({ state }: { state: string }) {
             className={
               (inView && des === "skills"
                 ? "h-full  translate-y-0 "
-                : " h-0 translate-y-[600%]   ") +
+                : " h-0 opacity-0 translate-y-[300%]   ") +
               " duration-[1500ms] ease-in-out"
             }
           >
@@ -94,7 +94,7 @@ export default function About({ state }: { state: string }) {
             <TiChevronLeftOutline color="#d8b15d" />
           </div>
         </div>
-        <div className="w-full h-full text-[#aaa] bg-[#272b33]/75 backdrop-blur flex  ">
+        <div className="w-full h-full text-[#aaa] flex  ">
           {/* <div
             className={`${
               inView ? "w-0 " : "w-[100%]"
@@ -117,13 +117,13 @@ export default function About({ state }: { state: string }) {
               } h-full ml-0 bg-[#282c34] `}
             ></div>
           </div>
-          <div className="overflow-hidden w-full h-full relative">
+          <div className=" w-full h-full relative">
             <div
               className={
                 (des === "aboutMe"
-                  ? "scale-1 translate-x-0"
-                  : "scale-[.75] translate-x-[100%]  bg-[#272b33]") +
-                " shadow-3xl duration-1000 ease-in-out w-full absolute h-full overflow-hidden"
+                  ? "scale-1 translate-x-0 "
+                  : "scale-[.75] translate-x-[100%] opacity-0") +
+                " bg-[#272b33]/75 backdrop-blur shadow-3xl duration-1000 ease-in-out w-full absolute h-full overflow-hidden"
               }
             >
               <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
@@ -145,13 +145,13 @@ export default function About({ state }: { state: string }) {
             <div
               className={
                 (des === "skills"
-                  ? "translate-x-0 shadow-3xl scale-1"
-                  : "-translate-x-[100%] scale-[.75]  bg-[#272b33]") +
-                " duration-1000 absolute ease-in-out w-full h-full overflow-hidden"
+                  ? "translate-x-0  scale-1"
+                  : "-translate-x-[100%] scale-[.75] opacity-0") +
+                " bg-[#272b33]/75 backdrop-blur duration-1000 shadow-3xl absolute ease-in-out w-full h-full overflow-hidden"
               }
             >
               <div className=" ">
-                <h1 className="mb-4 text-shadow sm:text-[25px] lg:text-[35px] text-[2rem] text-[#d8b15d] text-center">
+                <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
                   Technical Skills
                 </h1>
                 <div className="p-[1vw] text-left w-full">

@@ -155,7 +155,6 @@ svg  {
 
 .Alumni {
   font-family: 'Alumni Sans';
-  font-size: 10vh;
 }
 
 .cool-color :hover {
@@ -165,9 +164,8 @@ svg  {
 }
 
 hr {
-  height: 1.1vh;
-  background: #d8b15d;
-  box-shadow: #f6d094;
+  background: #aaa;
+  box-shadow: #aaa;
 }
 
 .anime-delay-500 {

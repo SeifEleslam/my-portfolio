@@ -18,7 +18,7 @@ export default function Drama({
         ref={ref}
         className={
           (inView ? " animate-zoom shadow-gold " : " opacity-0 ") +
-          " bg-[#222]/25 backdrop-blur overflow-hidden lg:ml-[12vw] mt-[15vh] lg:w-[45%] w-auto z-10 relative duration-[1000ms]"
+          " bg-[#222]/25 origin-left backdrop-blur overflow-hidden lg:ml-[12vw] mt-[15vh] lg:w-[45%] w-auto z-10 relative duration-[1000ms]"
         }
       >
         <div
@@ -33,13 +33,15 @@ export default function Drama({
           ></div>
         </div>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
-        <p className="leading-[8vh] Alumni text-[#d8b15d] text-shadow">
+        <p className="leading-[8vh] text-[8vh] Alumni text-[#d8b15d] text-shadow">
           Manners
         </p>
-        <p className="leading-[8vh] Alumni text-[#d8b15d] text-shadow">
+        <p className="leading-[8vh] text-[8vh] Alumni text-[#d8b15d] text-shadow">
           Maketh
         </p>
-        <p className="leading-[8vh] Alumni text-[#d8b15d] text-shadow">Man</p>
+        <p className="leading-[8vh] text-[8vh] Alumni text-[#d8b15d] text-shadow">
+          Man
+        </p>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
       </div>
 

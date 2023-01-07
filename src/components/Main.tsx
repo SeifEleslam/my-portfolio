@@ -6,11 +6,10 @@ import Header from "./Header";
 import Drama from "./Drama";
 import Footer from "./Footer";
 import About from "./About";
-import TargetSVG from "./TargetSVG";
-import CoolCircle from "./CoolCircle";
+import Contact from "./Contact";
 
 export function Main() {
-  const appTable = ["drama", "about", "projects"];
+  const appTable = ["drama", "about", "projects", "contact"];
   const [state, setState] = useState(appTable[0]);
   const [curr, setCurr] = useState(0);
   const ref = useRef(null);
@@ -200,13 +199,6 @@ export function Main() {
       className="App absolute overflow-hidden w-full h-full"
     >
       <Header />
-      {/* <div
-        className={
-          " md:pl-[50%] pl-0 duration-500 h-full w-full inset-0 z-[0] text-right fixed"
-        }
-      >
-        <TargetSVG motion={true} />
-      </div> */}
       <Drama handleState={handleState} state={state} />
       <About state={state} />
       <Element
@@ -214,10 +206,10 @@ export function Main() {
         id="projects"
         className="text-white overflow-hidden w-full h-full"
       >
-        <h1>ev</h1>
-        <h2>My Story</h2>
-        itis doloribus praesentium.
+        Projects
       </Element>
+      <Contact />
+
       <Footer linkState={state} handleState={handleState} />
     </div>
   );

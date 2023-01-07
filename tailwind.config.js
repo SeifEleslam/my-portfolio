@@ -26,9 +26,14 @@ module.exports = {
         hidedown: 'hidedown 1.5s ease-in-out forwards',
         showleft: 'showleft 1s ease-in-out forwards',
         hideleft: 'hideleft 1s ease-in-out forwards',
+        waving: 'wave 2s linear',
 
       },
       keyframes: {
+        wave: {
+          '0%': { height: '0%', bottom: '100%' },
+          '100%': { height: '300px', bottom: '0%'},
+        },
         zoom: {
           '0%': { transform: 'translate(-30px) scale(0.8)'},
           '100%': { transform: 'translate(0) scale(1)'},
