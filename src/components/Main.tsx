@@ -161,21 +161,21 @@ export function Main() {
   }, [state]);
 
   useEffect(() => {
-    window.addEventListener("wheel", slide);
-    window.addEventListener("mousewheel", slide);
-    window.addEventListener("DOMMouseScroll", slide);
-    window.addEventListener("resize", resize);
-    window.addEventListener("keyup", keyNav);
-    window.addEventListener("touchstart", touchStart);
-    window.addEventListener("touchmove", touchMove);
+    document.body.addEventListener("wheel", slide);
+    document.body.addEventListener("mousewheel", slide);
+    document.body.addEventListener("DOMMouseScroll", slide);
+    document.body.addEventListener("resize", resize);
+    document.body.addEventListener("keyup", keyNav);
+    document.body.addEventListener("touchstart", touchStart);
+    document.body.addEventListener("touchmove", touchMove);
     return () => {
-      window.removeEventListener("wheel", slide);
-      window.removeEventListener("mousewheel", slide);
-      window.removeEventListener("DOMMouseScroll", slide);
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("keyup", keyNav);
-      window.removeEventListener("touchstart", touchStart);
-      window.removeEventListener("touchmove", touchMove);
+      document.body.removeEventListener("wheel", slide);
+      document.body.removeEventListener("mousewheel", slide);
+      document.body.removeEventListener("DOMMouseScroll", slide);
+      document.body.removeEventListener("resize", resize);
+      document.body.removeEventListener("keyup", keyNav);
+      document.body.removeEventListener("touchstart", touchStart);
+      document.body.removeEventListener("touchmove", touchMove);
     };
   });
 

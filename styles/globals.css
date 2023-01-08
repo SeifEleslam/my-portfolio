@@ -86,9 +86,11 @@ html,
 body {
   width: 100vw;
   height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
+  position: fixed;
   scroll-behavior: smooth;
   background-color: #282c34;
+  -webkit-overflow-scrolling: touch;
 }
 
 
