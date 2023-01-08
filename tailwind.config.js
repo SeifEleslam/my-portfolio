@@ -35,8 +35,8 @@ module.exports = {
           '100%': { height: '300px', bottom: '0%'},
         },
         zoom: {
-          '0%': { transform: 'translate(-30px) scale(0.8)'},
-          '100%': { transform: 'translate(0) scale(1)'},
+          '0%': { transform: 'scale(0.8)'},
+          '100%': { transform: 'scale(1)'},
         },
         rotatescroll: {
           '0%': { transform: 'translate(0, 50vh) rotate(0deg)'},
