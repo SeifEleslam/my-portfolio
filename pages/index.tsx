@@ -3,9 +3,12 @@ import { Main } from "../src/components/Main";
 import { useEffect, useState } from "react";
 import TargetSVG from "../src/components/TargetSVG";
 import CoolBg from "../src/components/CoolBg";
+import { useInView } from "react-intersection-observer";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
+  const [ref, inView] = useInView();
+
   // const mouseMove = (e: any) => {
   //   const X = e.clientX - 450;
   //   const Y = e.clientY - 450;
@@ -39,7 +42,14 @@ export default function Home() {
           "opacity-75 md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full inset-0 z-[0] text-right fixed"
         }
       >
-        <div data-depth="0.6" className="w-full h-full">
+        <div
+          ref={ref}
+          data-depth="0.6"
+          className={
+            (inView ? " translate-y-0 " : " translate-y-[100%] ") +
+            "w-full h-full duration-1000 "
+          }
+        >
           <TargetSVG motion={true} />
         </div>
       </div>

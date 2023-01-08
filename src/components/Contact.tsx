@@ -41,7 +41,7 @@ export default function contact() {
       </div>
       <div
         className={
-          (inView ? " scale-y-100  " : " scale-y-[0] opacity-0 ") +
+          (inView ? " scale-y-100  " : " scale-y-[50%] opacity-0 ") +
           "w-[90%] lg:w-[80%] md:flex-row flex flex-col  justify-around items-center origin-top duration-1000 shadow-3xl bg-[#272b33]/75 backdrop-blur border-t-[2px] border-[#aaa] mt-0 h-[40vh] mx-auto "
         }
       >

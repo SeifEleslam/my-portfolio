@@ -24,6 +24,8 @@ export function Main() {
     last: 0,
   });
   function slide(e: any) {
+    if (e.stopPropagation) e.stopPropagation();
+    e.preventDefault();
     // figuring out if the scrolling is by hardware or user
     // taken from fullpage open source:
     // https://github.com/alvarotrigo/fullPage.js/
@@ -71,6 +73,8 @@ export function Main() {
   }
   const wait = useRef(0);
   const touchMove = (e: TouchEvent) => {
+    if (e.stopPropagation) e.stopPropagation();
+    e.preventDefault();
     var te = e.changedTouches[0].clientY;
     if (ts.current > te + 50) {
       slideDown();
