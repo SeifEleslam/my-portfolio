@@ -57,7 +57,7 @@ export default function Drama({
       <div
         ref={ref2}
         className={
-          " mx-auto w-[90vw] left-0 right-0 lg:ml-[12vw] overflow-hidden absolute md:bottom-[5vh] bottom-[3vh] py-[10vh] mx-auto md:relative z-[10]"
+          " mx-auto w-[90vw] left-0 right-0 lg:ml-[12vw] overflow-hidden absolute md:bottom-[5vh] bottom-[3vh] py-[16vh] mx-auto md:relative z-[10]"
         }
       >
         <p

@@ -42,9 +42,9 @@ export default function About({ state }: { state: string }) {
           <div
             className={
               (inView && des === "aboutMe"
-                ? " h-full  translate-y-0 "
-                : " h-0 opacity-0 translate-y-[300%] ") +
-              " duration-[1500ms] ease-in-out"
+                ? " scale-[1]  translate-y-0 "
+                : " scale-[0] opacity-0 translate-y-[300%] ") +
+              " duration-[1500ms] h-full w-full ease-in-out"
             }
           >
             <Info />
@@ -52,9 +52,9 @@ export default function About({ state }: { state: string }) {
           <div
             className={
               (inView && des === "skills"
-                ? "h-full  translate-y-0 "
-                : " h-0 opacity-0 translate-y-[300%]   ") +
-              " duration-[1500ms] ease-in-out"
+                ? "scale-[1] translate-y-[-100%] "
+                : " scale-[0] opacity-0 translate-y-[300%]   ") +
+              " duration-[1500ms] h-full w-full ease-in-out"
             }
           >
             <Skills />

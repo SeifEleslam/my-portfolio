@@ -164,16 +164,16 @@ export function Main() {
     document.body.addEventListener("wheel", slide);
     document.body.addEventListener("mousewheel", slide);
     document.body.addEventListener("DOMMouseScroll", slide);
-    document.body.addEventListener("resize", resize);
-    document.body.addEventListener("keyup", keyNav);
+    window.addEventListener("resize", resize);
+    window.addEventListener("keyup", keyNav);
     document.body.addEventListener("touchstart", touchStart);
     document.body.addEventListener("touchmove", touchMove);
     return () => {
       document.body.removeEventListener("wheel", slide);
       document.body.removeEventListener("mousewheel", slide);
       document.body.removeEventListener("DOMMouseScroll", slide);
-      document.body.removeEventListener("resize", resize);
-      document.body.removeEventListener("keyup", keyNav);
+      window.removeEventListener("resize", resize);
+      window.removeEventListener("keyup", keyNav);
       document.body.removeEventListener("touchstart", touchStart);
       document.body.removeEventListener("touchmove", touchMove);
     };
