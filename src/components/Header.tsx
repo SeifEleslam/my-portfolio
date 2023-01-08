@@ -15,10 +15,18 @@ export default function Header() {
             </a>
           </div>
           <div className="items-center justify-end flex text-right w-[50%] h-[6vh]">
-            <a className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]">
+            <a
+              href="https://github.com/SeifEleslam"
+              target="_blank"
+              className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]"
+            >
               <Github />
             </a>
-            <a className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]">
+            <a
+              href="https://www.linkedin.com/in/seifeleslam-gouda-0a5504256"
+              target="_blank"
+              className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]"
+            >
               <LinkedIn />
             </a>
           </div>
