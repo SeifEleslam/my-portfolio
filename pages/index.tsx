@@ -44,7 +44,7 @@ export default function Home() {
             "opacity-75 md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full inset-0 z-[0] text-right fixed"
           }
         >
-          <div data-depth="0.6" className={"w-full h-full duration-1000 "}>
+          <div data-depth="0.6" className={"w-full h-full "}>
             <TargetSVG motion={true} />
           </div>
         </div>
