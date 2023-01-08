@@ -25,7 +25,6 @@ export function Main() {
   });
   function slide(e: any) {
     if (e.stopPropagation) e.stopPropagation();
-    e.preventDefault();
     // figuring out if the scrolling is by hardware or user
     // taken from fullpage open source:
     // https://github.com/alvarotrigo/fullPage.js/
@@ -36,7 +35,8 @@ export function Main() {
 
     // callculate delta for various events
     // add the value to scrolling
-    const delta = e.deltaY || e.detail;
+    const delta = e.deltaY || -e.wheelDelta || e.detail;
+    console.log(delta);
     if (slideData.current.scrollings.length > 120) {
       slideData.current.scrollings.shift();
       slideData.current.scrollings.push(Math.abs(delta));
@@ -161,9 +161,11 @@ export function Main() {
   }, [state]);
 
   useEffect(() => {
-    document.body.addEventListener("wheel", slide);
-    document.body.addEventListener("mousewheel", slide);
-    document.body.addEventListener("DOMMouseScroll", slide);
+    if (window.WheelEvent) document.body.addEventListener("wheel", slide);
+    else {
+      document.body.addEventListener("DOMMouseScroll", slide);
+      document.body.addEventListener("mousewheel", slide);
+    }
     window.addEventListener("resize", resize);
     window.addEventListener("keyup", keyNav);
     document.body.addEventListener("touchstart", touchStart);
