@@ -108,13 +108,13 @@ export default function About({ state }: { state: string }) {
           </div> */}
           <div
             className={`${
-              inView ? "animate-slideright" : ""
-            } right-0 h-full absolute z-[100] bg-[#edc769]`}
+              inView ? "animate-slideright " : ""
+            } right-0 h-full z-[100] w-full absolute bg-[#edc769] origin-right`}
           >
             <div
               className={`${
                 inView ? "animate-hesitate" : ""
-              } h-full ml-0 bg-[#282c34] `}
+              } h-full w-full ml-0 bg-[#282c34] `}
             ></div>
           </div>
           <div className=" w-full h-full relative">

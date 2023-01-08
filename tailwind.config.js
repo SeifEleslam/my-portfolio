@@ -47,8 +47,8 @@ module.exports = {
           '100%': { height: '0'},
         },
         slideright: {
-          '0%': { width: '100%'},
-          '100%': { width: '0', },
+          '0%': { transform: 'scaleX(1)'},
+          '100%': { transform: 'scaleX(0)', },
         },
         hesitate: {
           '0%': { width: '0%' },

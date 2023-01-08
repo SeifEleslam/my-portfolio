@@ -20,13 +20,13 @@ export default function contact() {
       >
         <div
           className={`${
-            inView ? "animate-slideright" : ""
-          } right-0 top-0 h-full absolute bg-[#edc769]`}
+            inView ? "animate-slideright " : ""
+          } right-0 top-0 h-full z-[100] w-full absolute bg-[#edc769] origin-right`}
         >
           <div
             className={`${
               inView ? "animate-hesitate" : ""
-            } h-full ml-0 bg-[#282c34] `}
+            } h-full w-full ml-0 bg-[#282c34] `}
           ></div>
         </div>
         <div className="">
