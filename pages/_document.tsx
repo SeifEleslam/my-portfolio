@@ -7,7 +7,7 @@ export default function Document() {
         <title>Seif's SUit</title>
         <meta name="description" content="Created With Noble Manners" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="favicon.ico" />
       </Head>{" "}
       <body>
         <Main />
