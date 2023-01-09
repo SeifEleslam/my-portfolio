@@ -34,8 +34,8 @@ export default function Home() {
         <div
           id="scene"
           className={
-            (inView ? " scale-[1] " : " scale-[1.5] ") +
-            "opacity-100 md:pl-[30%] origin-bottom lg:pl-[50%] pl-0 duration-1000 h-full w-full inset-0 z-[0] text-right fixed"
+            (inView ? " scale-[1] " : " scale-[1.5] opacity-0 ") +
+            " md:pl-[30%] origin-bottom lg:pl-[50%] pl-0 duration-1000 h-full w-full inset-0 z-[0] text-right fixed"
           }
         >
           <div data-depth="0.8" className={"w-full  h-full "}>
