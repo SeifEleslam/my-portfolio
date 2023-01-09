@@ -109,7 +109,7 @@ export default function About({ state }: { state: string }) {
           <div
             className={`${
               inView ? "animate-slideright " : ""
-            } right-0 h-full z-[100] w-full absolute bg-[#edc769] origin-right`}
+            } right-0 h-full z-[1000] w-full absolute bg-[#edc769] origin-right`}
           >
             <div
               className={`${
