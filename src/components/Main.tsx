@@ -36,7 +36,6 @@ export function Main() {
     // callculate delta for various events
     // add the value to scrolling
     const delta = e.deltaY || -e.wheelDelta || e.detail;
-    console.log(delta);
     if (slideData.current.scrollings.length > 120) {
       slideData.current.scrollings.shift();
       slideData.current.scrollings.push(Math.abs(delta));

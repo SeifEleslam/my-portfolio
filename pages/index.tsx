@@ -25,7 +25,6 @@ export default function Home() {
 
   return (
     <>
-
       {/* <div className="animate-slideup w-[100vw] bg-[#282c34] z-[100] h-[100vh] flex absolute justify-center items-center">
         <div className="inline h-[60vh]">
           <TargetSVG motion={false} rotate={true} />
@@ -35,12 +34,12 @@ export default function Home() {
         <div
           id="scene"
           className={
-            (inView ? " translate-y-0 " : " translate-y-[100%] ") +
-            "opacity-75 md:pl-[30%] lg:pl-[50%] pl-0 duration-500 h-full w-full inset-0 z-[0] text-right fixed"
+            (inView ? " scale-[1] " : " scale-[1.5] ") +
+            "opacity-100 md:pl-[30%] origin-bottom lg:pl-[50%] pl-0 duration-1000 h-full w-full inset-0 z-[0] text-right fixed"
           }
         >
-          <div data-depth="0.8" className={"w-full h-full "}>
-            <TargetSVG motion={true} />
+          <div data-depth="0.8" className={"w-full  h-full "}>
+            <TargetSVG />
           </div>
         </div>
         <Main />

@@ -30,7 +30,7 @@ export default function About({ state }: { state: string }) {
         ref={ref}
         className={
           (inView ? " animate-zoom  " : " opacity-0 ") +
-          " relative origin-left z-[100] mt-[12vh] h-2/3  mx-auto md:ml-[10vw] md:w-2/3 w-[95%] duration-500"
+          " relative origin-left z-[100] mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 w-[80%] duration-500"
         }
       >
         <div
@@ -123,7 +123,7 @@ export default function About({ state }: { state: string }) {
                 (des === "aboutMe"
                   ? "scale-1 translate-x-0 "
                   : "scale-[.75] translate-x-[100%] opacity-0") +
-                " bg-[#272b33]/75 backdrop-blur shadow-3xl duration-1000 ease-in-out w-full absolute h-full overflow-hidden"
+                " bg-[#272b33]  shadow-3xl duration-1000 ease-in-out w-full absolute h-full overflow-hidden"
               }
             >
               <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
@@ -147,7 +147,7 @@ export default function About({ state }: { state: string }) {
                 (des === "skills"
                   ? "translate-x-0  scale-1"
                   : "-translate-x-[100%] scale-[.75] opacity-0") +
-                " bg-[#272b33]/75 backdrop-blur duration-1000 shadow-3xl absolute ease-in-out w-full h-full overflow-hidden"
+                " bg-[#272b33]  duration-1000 shadow-3xl absolute ease-in-out w-full h-full overflow-hidden"
               }
             >
               <div className=" ">
