@@ -12,14 +12,11 @@ module.exports = {
         'footer': '0 0 10px 1px #000'
       },
       animation: {
-        zoom: 'zoom 1.4s ease-in-out forwards',
-        zoomreverse: 'zoom 1.9s ease-in-out reverse forwards',
+        zoom: 'zoom .9s ease-in-out forwards',
         rotatescroll: 'rotatescroll 1.5s ease-in-out',
         slideup: 'slideup 1s ease-in-out forwards',
-        slideright: 'slideright 1s ease-in-out forwards',
-        sliderightreverse: 'slideright 1s ease-in-out reverse forwards',
-        hesitate: 'hesitate 1.1s ease-in-out forwards',
-        hesitatereverse: 'hesitate 1.1s ease-in-out reverse forwards',
+        slideright: 'slideright .7s ease-in-out forwards',
+        hesitate: 'hesitate .7s ease-in-out forwards',
         showup: 'showup 1.5s ease-in-out forwards',
         hideup: 'hideup 1.5s ease-in-out forwards',
         showdown: 'showdown 1.5s ease-in-out forwards',
@@ -35,7 +32,7 @@ module.exports = {
           '100%': { height: '300px', bottom: '0%'},
         },
         zoom: {
-          '0%': { transform: 'scale(0.8)'},
+          '0%': { transform: 'scale(0.9)'},
           '100%': { transform: 'scale(1)'},
         },
         rotatescroll: {

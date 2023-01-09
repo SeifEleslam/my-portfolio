@@ -24,12 +24,12 @@ export default function Drama({
         <div
           className={`${
             inView ? "animate-slideright " : ""
-          } right-0 h-full w-full absolute bg-[#edc769] origin-right`}
+          } right-0 h-full z-[1000] w-full absolute bg-[#282c34] origin-right`}
         >
           <div
             className={`${
               inView ? "animate-hesitate" : ""
-            } h-full w-full ml-0 bg-[#282c34] `}
+            } h-full w-full ml-0 bg-[#edc769] `}
           ></div>
         </div>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
