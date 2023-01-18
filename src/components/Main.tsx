@@ -47,7 +47,6 @@ export function Main() {
     const averageEnd = average(slideData.current.scrollings, 10);
     const averageAll = average(slideData.current.scrollings, 70);
     const isAccelrating = averageEnd >= averageAll;
-
     if (isAccelrating) {
       if (delta > 0) {
         slideDown();
@@ -84,7 +83,7 @@ export function Main() {
 
   const slideDown = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 1000) return;
+    if (slideData.current.last - slideData.current.prev < 700) return;
     if (curr < appTable.length - 1 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr + 1]);
@@ -96,7 +95,7 @@ export function Main() {
   };
   const slideUp = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 1000) return;
+    if (slideData.current.last - slideData.current.prev < 700) return;
     if (curr > 0 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr - 1]);
@@ -122,9 +121,9 @@ export function Main() {
   const resize = () => {
     // setState(appTable[curr]);
     Scroll.scroller.scrollTo(state, {
-      duration: 1000,
+      duration: 1500,
       containerId: "App",
-      smooth: "easeInOutQuint",
+      smooth: "easeOutQuint",
       offset: 0,
       ignoreCancelEvents: true,
     });
@@ -149,7 +148,7 @@ export function Main() {
   };
   useEffect(() => {
     Scroll.scroller.scrollTo(state, {
-      duration: 1500,
+      duration: 500,
       containerId: "App",
       smooth: "easeInOutQuart",
       offset: 0,

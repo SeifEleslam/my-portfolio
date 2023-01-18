@@ -29,11 +29,7 @@ export default function About({ state }: { state: string }) {
       <div
         ref={ref}
         className={
-          (inView && state === "about"
-            ? " animate-zoom  "
-            : inView
-            ? " "
-            : " opacity-0 ") +
+          (inView ? " animate-zoom  " : " opacity-0 ") +
           " relative origin-left z-[100] mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 w-[80%] duration-500"
         }
       >
@@ -112,11 +108,7 @@ export default function About({ state }: { state: string }) {
           </div> */}
           <div
             className={`${
-              inView && state === "about"
-                ? "animate-slideright "
-                : inView
-                ? " scale-0 "
-                : " scale-0 "
+              inView ? "animate-slideright " : " scale-0 "
             } right-0 h-full z-[1000] w-full absolute bg-[#282c34] origin-right`}
           >
             <div
