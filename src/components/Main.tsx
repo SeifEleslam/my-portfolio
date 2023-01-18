@@ -148,7 +148,7 @@ export function Main() {
   };
   useEffect(() => {
     Scroll.scroller.scrollTo(state, {
-      duration: 500,
+      duration: 700,
       containerId: "App",
       smooth: "easeInOutQuart",
       offset: 0,
