@@ -122,7 +122,7 @@ export function Main() {
   const resize = () => {
     // setState(appTable[curr]);
     Scroll.scroller.scrollTo(state, {
-      duration: 1500,
+      duration: 1000,
       containerId: "App",
       smooth: "easeInOutQuint",
       offset: 0,
@@ -151,7 +151,7 @@ export function Main() {
     Scroll.scroller.scrollTo(state, {
       duration: 1500,
       containerId: "App",
-      smooth: "easeInOutQuint",
+      smooth: "easeInOutQuart",
       offset: 0,
       ignoreCancelEvents: true,
     });

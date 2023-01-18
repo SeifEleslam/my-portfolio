@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import TargetSVG from "../src/components/TargetSVG";
 import CoolBg from "../src/components/CoolBg";
 import { useInView } from "react-intersection-observer";
+import SuitSVG from "../src/components/SuitSVG";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
@@ -38,7 +39,7 @@ export default function Home() {
             " md:pl-[30%] origin-bottom lg:pl-[50%] pl-0 duration-1000 h-full w-full inset-0 z-[0] text-right fixed"
           }
         >
-          <div data-depth="0.8" className={"w-full  h-full "}>
+          <div data-depth="0.8" className={"w-full absolute  h-full "}>
             <TargetSVG />
           </div>
         </div>

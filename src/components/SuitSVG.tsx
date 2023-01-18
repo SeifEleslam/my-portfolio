@@ -1,6 +1,7 @@
 export default function SuitSVG() {
   return (
     <svg
+      id="suit"
       className="w-full h-full"
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
