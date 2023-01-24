@@ -36,7 +36,7 @@ export default function contact() {
       <div
         className={
           (inView ? " backdrop-blur bg-[#272b33]/75 " : " ") +
-          "   w-fit md:ml-[10vw] mx-auto translate-y-[-60%] overflow-hidden duration-1500 mb-[6vh] shadow-3xl p-2"
+          "   w-fit md:ml-[10vw] mx-auto translate-y-[-70%] overflow-hidden duration-1500 mb-[6vh] shadow-3xl p-2"
         }
       >
         <div
