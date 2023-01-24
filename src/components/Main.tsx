@@ -83,7 +83,7 @@ export function Main() {
 
   const slideDown = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 700) return;
+    if (slideData.current.last - slideData.current.prev < 900) return;
     if (curr < appTable.length - 1 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr + 1]);
@@ -95,7 +95,7 @@ export function Main() {
   };
   const slideUp = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 700) return;
+    if (slideData.current.last - slideData.current.prev < 900) return;
     if (curr > 0 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr - 1]);
@@ -123,7 +123,7 @@ export function Main() {
     Scroll.scroller.scrollTo(state, {
       duration: 1500,
       containerId: "App",
-      smooth: "easeOutQuint",
+      smooth: "easeOutCubic",
       offset: 0,
       ignoreCancelEvents: true,
     });
@@ -148,9 +148,9 @@ export function Main() {
   };
   useEffect(() => {
     Scroll.scroller.scrollTo(state, {
-      duration: 700,
+      duration: 900,
       containerId: "App",
-      smooth: "easeInOutQuart",
+      smooth: "easeInOutQuint",
       offset: 0,
       ignoreCancelEvents: true,
     });

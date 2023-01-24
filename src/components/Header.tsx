@@ -1,5 +1,5 @@
-import LightSVG from "./LightSVG";
-import { Github, LinkedIn } from "./Links";
+import LightSVG from "./svgs/LightSVG";
+import { Github, LinkedIn } from "./svgs/Links";
 
 export default function Header() {
   return (

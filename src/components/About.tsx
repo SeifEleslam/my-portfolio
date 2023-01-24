@@ -2,7 +2,7 @@ import { Element } from "react-scroll";
 import { useEffect, useRef, useState } from "react";
 import { TiChevronRightOutline, TiChevronLeftOutline } from "react-icons/ti";
 import { useInView } from "react-intersection-observer";
-import { Info, Skills } from "./AboutSections";
+import { Info, Skills } from "./svgs/AboutSections";
 import {
   Css,
   Docker,
@@ -14,7 +14,7 @@ import {
   React,
   Tailwind,
   Typescript,
-} from "./Skills";
+} from "./svgs/Skills";
 
 export default function About({ state }: { state: string }) {
   const [des, setDes] = useState("aboutMe");
@@ -29,22 +29,21 @@ export default function About({ state }: { state: string }) {
       <div
         ref={ref}
         className={
-          (inView ? " animate-zoom  " : " opacity-0 ") +
+          (inView && state === "about" ? " animate-zoom  " : " ") +
           " relative origin-left z-[100] mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 w-[80%] duration-500"
         }
       >
         <div
           className={
-            // ()+
             "z-[101] absolute lg:w-[8rem] w-[6rem] p-2 h-[8rem] -bottom-[4rem] inset-x-0 mx-auto "
           }
         >
           <div
             className={
               (inView && des === "aboutMe"
-                ? " scale-[1]  translate-y-0 "
-                : " scale-[0] opacity-0 translate-y-[300%] ") +
-              " duration-[1500ms] h-full w-full ease-in-out"
+                ? "   translate-y-0 "
+                : "  opacity-0 translate-y-[100%] ") +
+              " duration-[500ms] h-full w-full ease-in-out"
             }
           >
             <Info />
@@ -52,9 +51,9 @@ export default function About({ state }: { state: string }) {
           <div
             className={
               (inView && des === "skills"
-                ? "scale-[1] translate-y-[-100%] "
-                : " scale-[0] opacity-0 translate-y-[300%]   ") +
-              " duration-[1500ms] h-full w-full ease-in-out"
+                ? " translate-y-[-100%] "
+                : "  opacity-0 translate-y-[100%]   ") +
+              " duration-[500ms] h-full w-full ease-in-out"
             }
           >
             <Skills />
@@ -108,22 +107,23 @@ export default function About({ state }: { state: string }) {
           </div> */}
           <div
             className={`${
-              inView ? "animate-slideright " : " scale-0 "
+              inView && state === "about" ? "animate-slideright " : " scale-0 "
             } right-0 h-full z-[1000] w-full absolute bg-[#282c34] origin-right`}
           >
             <div
               className={`${
-                inView ? "animate-hesitate" : ""
+                inView && state === "about" ? "animate-hesitate" : ""
               } h-full w-full ml-0 bg-[#edc769] `}
             ></div>
           </div>
           <div className=" w-full h-full relative">
             <div
               className={
+                (inView ? " shadow-3xl " : " ") +
                 (des === "aboutMe"
                   ? "scale-1 translate-x-0 "
                   : "scale-[.75] translate-x-[100%] opacity-0") +
-                " bg-[#272b33]  shadow-3xl duration-1000 ease-in-out w-full absolute h-full overflow-hidden"
+                " bg-[#272b33] duration-500 ease-in-out w-full absolute h-full overflow-hidden"
               }
             >
               <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
@@ -144,10 +144,11 @@ export default function About({ state }: { state: string }) {
             </div>
             <div
               className={
+                (inView ? " shadow-3xl " : " ") +
                 (des === "skills"
                   ? "translate-x-0  scale-1"
                   : "-translate-x-[100%] scale-[.75] opacity-0") +
-                " bg-[#272b33]  duration-1000 shadow-3xl absolute ease-in-out w-full h-full overflow-hidden"
+                " bg-[#272b33]  duration-500 absolute ease-in-out w-full h-full overflow-hidden"
               }
             >
               <div className=" ">

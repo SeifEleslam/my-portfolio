@@ -23,6 +23,8 @@ module.exports = {
         hidedown: "hidedown .5s ease-in-out forwards",
         showleft: "showleft .5s ease-in-out forwards",
         hideleft: "hideleft .5s ease-in-out forwards",
+        showright: "showright .5s ease-in-out forwards",
+
         waving: "wave 2s linear",
       },
       keyframes: {
@@ -73,6 +75,10 @@ module.exports = {
         hideleft: {
           "0%": { transform: "translate(0)", opacity: 1 },
           "100%": { transform: "translate(50%)", opacity: 0 },
+        },
+        showright: {
+          "0%": { transform: "translate(-50%)", opacity: 0 },
+          "100%": { transform: "translate(0)", opacity: 1 },
         },
       },
     },

@@ -1,4 +1,4 @@
-import SuitSVG from "./SuitSVG";
+import SuitSVG from "./svgs/SuitSVG";
 import { Element } from "react-scroll";
 import { useInView } from "react-intersection-observer";
 
@@ -33,13 +33,13 @@ export default function Drama({
           ></div>
         </div>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
-        <p className="leading-[8vh] text-[8vh] Alumni text-[#d8b15d] text-shadow">
+        <p className="leading-[8vh] text-[4rem] lg:text-[6rem] Alumni text-[#d8b15d] text-shadow">
           Manners
         </p>
-        <p className="leading-[8vh] text-[8vh] Alumni text-[#d8b15d] text-shadow">
+        <p className="leading-[8vh] text-[4rem] lg:text-[6rem] Alumni text-[#d8b15d] text-shadow">
           Maketh
         </p>
-        <p className="leading-[8vh] text-[8vh] Alumni text-[#d8b15d] text-shadow">
+        <p className="leading-[8vh] text-[4rem] lg:text-[6rem] Alumni text-[#d8b15d] text-shadow">
           Man
         </p>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
@@ -63,7 +63,7 @@ export default function Drama({
         <p
           className={
             (inView ? " animate-showup " : " opacity-0 ") +
-            " text-shadow text-[5vh] text-[#aaa]"
+            " text-shadow lg:text-[3rem] text-[2rem] text-[#aaa]"
           }
         >
           Are we gonna stand here all day or you gonna
@@ -75,7 +75,7 @@ export default function Drama({
           }}
           className={
             (inView ? "animate-rotatescroll " : " opacity-0 ") +
-            "  mt-[3vh] rotate-90 text-[#d8b15d] text-[5vh] pl-[1vh] duration-[400ms] active:translate-y-[2vh] text-shadow"
+            " lg:text-[3rem] text-[2rem] mt-[3vh] rotate-90 text-[#d8b15d] pl-[1vh] duration-[400ms] active:translate-y-[2vh] text-shadow"
           }
         >
           Scroll?
