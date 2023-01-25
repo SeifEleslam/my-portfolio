@@ -18,7 +18,7 @@ export default function contact() {
         className={
           "z-10 " +
           (inView ? " animate-zoom  " : " scale-[0.9] ") +
-          " bg-center bg-[url('../src/images/contact.jpg')] md:top-[10vh] top-0 z-0 right-[10vw] bg-cover shadow-gold origin-left mt-[12vh] h-[60vh] mx-auto  md:w-3/5 w-[80%] duration-500"
+          " bg-center bg-[url('../src/images/contact.jpg')] md:top-[10vh] top-0 z-0 right-[10vw] bg-cover shadow-gold origin-left mt-[12vh] h-[60vh] mx-auto  md:w-3/5 w-[95%] duration-500"
         }
       >
         <div

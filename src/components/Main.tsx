@@ -13,6 +13,7 @@ export function Main() {
   const [state, setState] = useState(appTable[0]);
   const [curr, setCurr] = useState(0);
   const ref = useRef(null);
+  const [aboutState, setAboutState] = useState<"skills" | "aboutMe">("aboutMe");
 
   const slideData = useRef<{
     scrollings: number[];
@@ -65,20 +66,36 @@ export function Main() {
     return Math.ceil(sum / num);
   }
 
-  const ts = useRef(0);
+  const ts = useRef({ x: 0, y: 0 });
   function touchStart(e: TouchEvent) {
-    ts.current = e.touches[0].clientY;
+    ts.current.y = e.touches[0].clientY;
+    ts.current.x = e.touches[0].clientX;
   }
+
   const wait = useRef(0);
   const touchMove = (e: TouchEvent) => {
     if (e.stopPropagation) e.stopPropagation();
     e.preventDefault();
+    var teX = e.changedTouches[0].clientX;
+    if (ts.current.x > teX + 75 && state === "about") {
+      slideRight();
+    } else if (ts.current.x < teX - 75 && state === "about") {
+      slideLeft();
+    }
     var te = e.changedTouches[0].clientY;
-    if (ts.current > te + 50) {
+    if (ts.current.y > te + 150) {
       slideDown();
-    } else if (ts.current < te - 50) {
+    } else if (ts.current.y < te - 150) {
       slideUp();
     }
+  };
+
+  const slideRight = () => {
+    setAboutState("aboutMe");
+  };
+
+  const slideLeft = () => {
+    setAboutState("skills");
   };
 
   const slideDown = (val: "one" | "all" = "one") => {
@@ -93,6 +110,7 @@ export function Main() {
       return;
     }
   };
+
   const slideUp = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
     if (slideData.current.last - slideData.current.prev < 900) return;
@@ -204,7 +222,7 @@ export function Main() {
     >
       <Header />
       <Drama handleState={handleState} state={state} />
-      <About state={state} />
+      <About state={state} aboutState={aboutState} />
       <Element
         name="projects"
         id="projects"

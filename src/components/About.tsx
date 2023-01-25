@@ -15,11 +15,26 @@ import {
   Tailwind,
   Typescript,
 } from "./svgs/Skills";
+import { Collapse } from "./util/Collapse";
+import { BiExpandAlt } from "react-icons/bi";
+import { FiMinimize2 } from "react-icons/fi";
+import { SlArrowDown } from "react-icons/sl";
 
-export default function About({ state }: { state: string }) {
-  const [des, setDes] = useState("aboutMe");
+export default function About({
+  state,
+  aboutState,
+}: {
+  state: string;
+  aboutState: "skills" | "aboutMe";
+}) {
+  const [des, setDes] = useState<"skills" | "aboutMe">("aboutMe");
   const [ref, inView] = useInView();
+  const [expand, setExpand] = useState(false);
+  const [collapse, setCollapse] = useState<"exp" | "comf" | "fam">("exp");
 
+  useEffect(() => {
+    setDes(aboutState);
+  }, [aboutState]);
   return (
     <Element
       name="about"
@@ -30,12 +45,16 @@ export default function About({ state }: { state: string }) {
         ref={ref}
         className={
           (inView && state === "about" ? " animate-zoom  " : " ") +
-          " relative origin-left z-[100] mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 w-[80%] duration-500"
+          (!expand
+            ? " mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 w-[80%] "
+            : " w-full h-full z-[1000] ") +
+          " relative origin-left z-[100] duration-500"
         }
       >
         <div
           className={
-            "z-[101] absolute lg:w-[8rem] w-[6rem] p-2 h-[8rem] -bottom-[4rem] inset-x-0 mx-auto "
+            (expand ? "-bottom-[1rem]  " : " -bottom-[4rem]  ") +
+            "z-[101] absolute duration-500 lg:w-[8rem] w-[6rem] p-2 h-[8rem] mx-auto inset-x-0  "
           }
         >
           <div
@@ -126,6 +145,32 @@ export default function About({ state }: { state: string }) {
                 " bg-[#272b33] duration-500 ease-in-out w-full absolute h-full overflow-hidden"
               }
             >
+              {!expand ? (
+                <button
+                  onClick={() => {
+                    setExpand(true);
+                  }}
+                  className=" absolute top-2 right-2 z-[100] text-[#d8b15d]"
+                >
+                  <BiExpandAlt
+                    size="40px"
+                    className="hover:rotate-90 duration-500"
+                  />
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setExpand(false);
+                  }}
+                  className=" absolute top-2 right-2 z-[100] text-[#d8b15d]"
+                >
+                  <FiMinimize2
+                    size="40px"
+                    className="hover:rotate-90 duration-500"
+                  />
+                </button>
+              )}
+
               <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
                 About Me
               </h1>
@@ -151,61 +196,131 @@ export default function About({ state }: { state: string }) {
                 " bg-[#272b33]  duration-500 absolute ease-in-out w-full h-full overflow-hidden"
               }
             >
+              {!expand ? (
+                <button
+                  onClick={() => {
+                    setExpand(true);
+                  }}
+                  className=" absolute top-2 right-2 z-[100] text-[#d8b15d]"
+                >
+                  <BiExpandAlt
+                    size="40px"
+                    className="hover:rotate-90 duration-500"
+                  />
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    setExpand(false);
+                  }}
+                  className=" absolute top-2 right-2 z-[100] text-[#d8b15d]"
+                >
+                  <FiMinimize2
+                    size="40px"
+                    className="hover:rotate-90 duration-500"
+                  />
+                </button>
+              )}
               <div className=" ">
                 <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
                   Technical Skills
                 </h1>
                 <div className="p-[1vw] text-left w-full">
-                  <div className="w-full h-[10vh] flex">
-                    <p className="my-auto text-[#aaa] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] ">
-                      Experienced At:
-                    </p>
-                    <div className="h-full flex-1">
-                      <Html />
-                    </div>
-                    <div className="h-full flex-1">
-                      <Css />
-                    </div>
-                    <div className="h-full flex-1">
-                      <Js />
-                    </div>
-                    <div className="h-full flex-1">
-                      <React />
-                    </div>
-                  </div>
-                </div>
-                <div className="p-[1vw] text-left w-full">
-                  <div className="w-full h-[10vh] flex">
-                    <p className="text-[#aaa] my-auto text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] ">
-                      Comfortable With:
-                    </p>
-                    <div className="h-full flex-1">
-                      <Typescript />
-                    </div>
-                    <div className="h-full flex-1">
-                      <Tailwind />
+                  <div
+                    onClick={() => {
+                      setCollapse("exp");
+                    }}
+                    className="my-auto flex justify-between items-center p-2 bg-[#aaa] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                  >
+                    <div>Experienced At:</div>
+                    <div
+                      className={
+                        (collapse === "exp" ? " rotate-180 " : " ") +
+                        " duration-500"
+                      }
+                    >
+                      <SlArrowDown size="20px" />
                     </div>
                   </div>
+                  <Collapse open={collapse === "exp"} height="12vh">
+                    <div className="w-full h-[12vh] flex p-2">
+                      <div className="h-full flex-1">
+                        <Html />
+                      </div>
+                      <div className="h-full flex-1">
+                        <Css />
+                      </div>
+                      <div className="h-full flex-1">
+                        <Js />
+                      </div>
+                      <div className="h-full flex-1">
+                        <React />
+                      </div>
+                    </div>
+                  </Collapse>
                 </div>
                 <div className="p-[1vw] text-left w-full">
-                  <div className="w-full h-[10vh] flex">
-                    <p className="text-[#aaa] my-auto text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] ">
-                      Familiar With:
-                    </p>
-                    <div className="h-full flex-1">
-                      <Postgres />
+                  <div
+                    onClick={() => {
+                      setCollapse("comf");
+                    }}
+                    className="my-auto flex justify-between items-center p-2 bg-[#aaa] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                  >
+                    <div> Comfortable With:</div>
+                    <div
+                      className={
+                        (collapse === "comf" ? " rotate-180 " : " ") +
+                        " duration-500"
+                      }
+                    >
+                      <SlArrowDown size="20px" />
                     </div>
-                    <div className="h-full flex-1">
-                      <Nextjs />
+                  </div>
+                  <Collapse open={collapse === "comf"} height="12vh">
+                    <div className="w-full h-[12vh] p-2 flex duration-500">
+                      <div className="h-full flex-1">
+                        <Typescript />
+                      </div>
+                      <div className="h-full flex-1">
+                        <Tailwind />
+                      </div>
                     </div>
-                    <div className="h-full flex-1">
-                      <Golang />
+                  </Collapse>
+                </div>
+                <div className="p-[1vw] text-left w-full">
+                  <div
+                    onClick={() => {
+                      setCollapse("fam");
+                    }}
+                    className="my-auto flex justify-between items-center p-2 bg-[#aaa] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                  >
+                    <div> Familiar With:</div>
+                    <div
+                      className={
+                        (collapse === "fam" ? " rotate-180 " : " ") +
+                        " duration-500"
+                      }
+                    >
+                      <SlArrowDown size="20px" />
                     </div>
+                  </div>
+                  <Collapse open={collapse === "fam"} height={"12vh"}>
+                    <div className="w-full h-[12vh] flex p-2">
+                      <div className="h-full flex-1">
+                        <Postgres />
+                      </div>
+                      <div className="h-full flex-1">
+                        <Nextjs />
+                      </div>
+                      <div className="h-full flex-1">
+                        <Golang />
+                      </div>
 
-                    <div className="h-full flex-1">
-                      <Docker />
+                      <div className="h-full flex-1">
+                        <Docker />
+                      </div>
                     </div>
-                  </div>
+                  </Collapse>
                 </div>
               </div>
             </div>
