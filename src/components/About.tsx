@@ -1,5 +1,5 @@
 import { Element } from "react-scroll";
-import { useEffect, useRef, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { TiChevronRightOutline, TiChevronLeftOutline } from "react-icons/ti";
 import { useInView } from "react-intersection-observer";
 import { Info, Skills } from "./svgs/AboutSections";
@@ -23,18 +23,16 @@ import { SlArrowDown } from "react-icons/sl";
 export default function About({
   state,
   aboutState,
+  setAboutState,
 }: {
   state: string;
   aboutState: "skills" | "aboutMe";
+  setAboutState: Dispatch<SetStateAction<"skills" | "aboutMe">>;
 }) {
-  const [des, setDes] = useState<"skills" | "aboutMe">("aboutMe");
   const [ref, inView] = useInView();
   const [expand, setExpand] = useState(false);
   const [collapse, setCollapse] = useState<"exp" | "comf" | "fam">("exp");
 
-  useEffect(() => {
-    setDes(aboutState);
-  }, [aboutState]);
   return (
     <Element
       name="about"
@@ -59,7 +57,7 @@ export default function About({
         >
           <div
             className={
-              (inView && des === "aboutMe"
+              (inView && aboutState === "aboutMe"
                 ? "   translate-y-0 "
                 : "  opacity-0 translate-y-[100%] ") +
               " duration-[500ms] h-full w-full ease-in-out"
@@ -69,7 +67,7 @@ export default function About({
           </div>
           <div
             className={
-              (inView && des === "skills"
+              (inView && aboutState === "skills"
                 ? " translate-y-[-100%] "
                 : "  opacity-0 translate-y-[100%]   ") +
               " duration-[500ms] h-full w-full ease-in-out"
@@ -85,11 +83,13 @@ export default function About({
         >
           <div
             className={
-              (inView && des === "aboutMe" ? " " : " translate-x-[300%]") +
+              (inView && aboutState === "aboutMe"
+                ? " "
+                : " translate-x-[300%]") +
               "  text-[3rem] lg:text-[6rem] text-[#aaa] text-shadow cursor-pointer duration-[1000ms] "
             }
             onClick={() => {
-              setDes("skills");
+              setAboutState("skills");
             }}
           >
             <TiChevronRightOutline color="#d8b15d" />
@@ -102,11 +102,13 @@ export default function About({
         >
           <div
             className={
-              (inView && des === "skills" ? " " : " -translate-x-[300%]") +
+              (inView && aboutState === "skills"
+                ? " "
+                : " -translate-x-[300%]") +
               " text-[3rem] lg:text-[6rem] text-[#aaa] text-shadow cursor-pointer duration-[1000ms] "
             }
             onClick={() => {
-              setDes("aboutMe");
+              setAboutState("aboutMe");
             }}
           >
             <TiChevronLeftOutline color="#d8b15d" />
@@ -139,7 +141,7 @@ export default function About({
             <div
               className={
                 (inView ? " shadow-3xl " : " ") +
-                (des === "aboutMe"
+                (aboutState === "aboutMe"
                   ? "scale-1 translate-x-0 "
                   : "scale-[.75] translate-x-[100%] opacity-0") +
                 " bg-[#272b33] duration-500 ease-in-out w-full absolute h-full overflow-hidden"
@@ -190,7 +192,7 @@ export default function About({
             <div
               className={
                 (inView ? " shadow-3xl " : " ") +
-                (des === "skills"
+                (aboutState === "skills"
                   ? "translate-x-0  scale-1"
                   : "-translate-x-[100%] scale-[.75] opacity-0") +
                 " bg-[#272b33]  duration-500 absolute ease-in-out w-full h-full overflow-hidden"

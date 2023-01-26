@@ -77,15 +77,15 @@ export function Main() {
     if (e.stopPropagation) e.stopPropagation();
     e.preventDefault();
     var teX = e.changedTouches[0].clientX;
-    if (ts.current.x > teX + 75 && state === "about") {
+    if (ts.current.x > teX + 40 && state === "about") {
       slideRight();
-    } else if (ts.current.x < teX - 75 && state === "about") {
+    } else if (ts.current.x < teX - 40 && state === "about") {
       slideLeft();
     }
     var te = e.changedTouches[0].clientY;
-    if (ts.current.y > te + 150) {
+    if (ts.current.y > te + 50) {
       slideDown();
-    } else if (ts.current.y < te - 150) {
+    } else if (ts.current.y < te - 50) {
       slideUp();
     }
   };
@@ -197,23 +197,6 @@ export function Main() {
     };
   });
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", resize);
-  //   window.addEventListener("keyup", keyNav);
-  //   return () => {
-  //     window.removeEventListener("resize", resize);
-  //     window.removeEventListener("keyup", keyNav);
-  //   };
-  // });
-  // useEffect(() => {
-  //   window.addEventListener("touchstart", touchStart);
-  //   window.addEventListener("touchmove", touchMove);
-  //   return () => {
-  //     window.removeEventListener("touchstart", touchStart);
-  //     window.removeEventListener("touchmove", touchMove);
-  //   };
-  // });
-
   return (
     <div
       ref={ref}
@@ -222,7 +205,11 @@ export function Main() {
     >
       <Header />
       <Drama handleState={handleState} state={state} />
-      <About state={state} aboutState={aboutState} />
+      <About
+        state={state}
+        aboutState={aboutState}
+        setAboutState={setAboutState}
+      />
       <Element
         name="projects"
         id="projects"
