@@ -3,6 +3,7 @@ import { Element } from "react-scroll";
 import { LinkedIn, Mail } from "./svgs/Links";
 import contactLogo from "../images/contact.jpg";
 import Image from "next/image";
+import contactImg from "../images/contact.jpg";
 
 export default function contact() {
   const [ref, inView] = useInView();
@@ -13,14 +14,22 @@ export default function contact() {
       id="contact"
       className="relative text-white overflow-hidden w-full h-full"
     >
+      <div ref={ref} className={"mt-10 absolute"}></div>
       <div
-        ref={ref}
         className={
           "z-10 " +
-          (inView ? " animate-zoom  " : " scale-[0.9] ") +
-          " bg-center bg-[url('../src/images/contact.jpg')] md:top-[10vh] top-0 z-0 right-[10vw] bg-cover shadow-gold origin-left mt-[12vh] h-[60vh] mx-auto  md:w-3/5 w-[95%] duration-500"
+          (inView ? " animate-zoom shadow-gold " : " scale-[0.9] ") +
+          " bg-center  md:top-[10vh] top-0 z-0 right-[10vw] bg-cover  origin-left mt-[12vh] h-[60vh] mx-auto  md:w-3/5 w-[95%] duration-500"
         }
       >
+        {/* bg-[url('../src/images/contact.jpg')] */}
+        <Image
+          className="w-full h-full"
+          src={contactImg}
+          alt={""}
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
         <div
           className={`${
             inView ? "animate-slideright " : ""
@@ -84,7 +93,7 @@ export default function contact() {
             target="_blank"
             className={
               (inView ? " translate-x-0  " : " translate-x-[-120%] ") +
-              "  w-fit duration-500 delay-[400ms] text-shadow border-l-[2px] border-[#aaa] hover p-2 flex items-center text-[#aaa] md:text-[1.6rem] text-[1.2rem]  hover:text-[#d8b15d] focus:text-[#d8b15d] "
+              "  w-fit duration-500 delay-[400ms] text-shadow border-l-[2px] border-[#aaa] hover p-2 flex items-center text-[#aaa] md:text-[1.6rem] text-[1.2rem]  hover:text-[#d8b15d] mb-4 focus:text-[#d8b15d] "
             }
           >
             <div className="md:w-[3rem] w-[2rem] md:h-[3rem] h-[2rem] mr-2">

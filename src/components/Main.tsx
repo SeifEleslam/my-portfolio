@@ -77,16 +77,20 @@ export function Main() {
     if (e.stopPropagation) e.stopPropagation();
     e.preventDefault();
     var teX = e.changedTouches[0].clientX;
-    if (ts.current.x > teX + 40 && state === "about") {
-      slideRight();
-    } else if (ts.current.x < teX - 40 && state === "about") {
-      slideLeft();
-    }
     var te = e.changedTouches[0].clientY;
-    if (ts.current.y > te + 50) {
-      slideDown();
-    } else if (ts.current.y < te - 50) {
-      slideUp();
+
+    if (Math.abs(ts.current.x - teX) > Math.abs(ts.current.y - te)) {
+      if (ts.current.x > teX + 50 && state === "about") {
+        slideRight();
+      } else if (ts.current.x < teX - 50 && state === "about") {
+        slideLeft();
+      }
+    } else {
+      if (ts.current.y > te + 60) {
+        slideDown();
+      } else if (ts.current.y < te - 60) {
+        slideUp();
+      }
     }
   };
 
@@ -100,7 +104,7 @@ export function Main() {
 
   const slideDown = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 900) return;
+    if (slideData.current.last - slideData.current.prev < 1100) return;
     if (curr < appTable.length - 1 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr + 1]);
@@ -113,7 +117,7 @@ export function Main() {
 
   const slideUp = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 900) return;
+    if (slideData.current.last - slideData.current.prev < 1100) return;
     if (curr > 0 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr - 1]);
@@ -134,6 +138,8 @@ export function Main() {
     } else if (e.code === "Home") {
       slideUp("all");
     }
+    if (e.code === "ArrowRight") slideRight();
+    else if (e.code === "ArrowLeft") slideLeft();
   };
 
   const resize = () => {

@@ -47,7 +47,7 @@ export default function Drama({
 
       <div
         className={
-          (inView ? " animate-showleft " : " animate-hideleft ") +
+          (state === "drama" ? " animate-showleft " : " animate-hideleft ") +
           // (state !== "drama" ? "animate-hideleft " : " ") +
           " md:pl-[30%] lg:pl-[50%] pl-0 duration-[500ms] opacity-0 h-full w-full absolute inset-0 z-[0] text-right "
         }

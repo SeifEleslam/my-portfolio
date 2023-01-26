@@ -44,15 +44,17 @@ export default function About({
         className={
           (inView && state === "about" ? " animate-zoom  " : " ") +
           (!expand
-            ? " mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 w-[80%] "
+            ? " mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 xl:w-1/2 w-[80%] "
             : " w-full h-full z-[1000] ") +
           " relative origin-left z-[100] duration-500"
         }
       >
         <div
           className={
-            (expand ? "-bottom-[1rem]  " : " -bottom-[4rem]  ") +
-            "z-[101] absolute duration-500 lg:w-[8rem] w-[6rem] p-2 h-[8rem] mx-auto inset-x-0  "
+            (expand
+              ? " -top-16 -left-5 scale-[.5] "
+              : " -bottom-[4rem] inset-x-0 ") +
+            " absolute z-10  duration-500 mx-auto origin-bottom  lg:w-[8rem] w-[6rem] p-2 h-[8rem] "
           }
         >
           <div
@@ -83,13 +85,13 @@ export default function About({
         >
           <div
             className={
-              (inView && aboutState === "aboutMe"
+              (inView && aboutState === "skills"
                 ? " "
                 : " translate-x-[300%]") +
               "  text-[3rem] lg:text-[6rem] text-[#aaa] text-shadow cursor-pointer duration-[1000ms] "
             }
             onClick={() => {
-              setAboutState("skills");
+              setAboutState("aboutMe");
             }}
           >
             <TiChevronRightOutline color="#d8b15d" />
@@ -102,13 +104,13 @@ export default function About({
         >
           <div
             className={
-              (inView && aboutState === "skills"
+              (inView && aboutState === "aboutMe"
                 ? " "
                 : " -translate-x-[300%]") +
               " text-[3rem] lg:text-[6rem] text-[#aaa] text-shadow cursor-pointer duration-[1000ms] "
             }
             onClick={() => {
-              setAboutState("aboutMe");
+              setAboutState("skills");
             }}
           >
             <TiChevronLeftOutline color="#d8b15d" />
@@ -137,7 +139,7 @@ export default function About({
               } h-full w-full ml-0 bg-[#edc769] `}
             ></div>
           </div>
-          <div className=" w-full h-full relative">
+          <div className={" w-full h-full relative"}>
             <div
               className={
                 (inView ? " shadow-3xl " : " ") +
@@ -149,6 +151,7 @@ export default function About({
             >
               {!expand ? (
                 <button
+                  aria-label="expand"
                   onClick={() => {
                     setExpand(true);
                   }}
@@ -161,6 +164,7 @@ export default function About({
                 </button>
               ) : (
                 <button
+                  aria-label="disable expand"
                   onClick={() => {
                     setExpand(false);
                   }}
@@ -200,6 +204,7 @@ export default function About({
             >
               {!expand ? (
                 <button
+                  aria-label="expand"
                   onClick={() => {
                     setExpand(true);
                   }}
@@ -212,6 +217,7 @@ export default function About({
                 </button>
               ) : (
                 <button
+                  aria-label="disable expand"
                   onClick={() => {
                     setExpand(false);
                   }}

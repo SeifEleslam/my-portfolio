@@ -18,6 +18,7 @@ export default function Header() {
             <a
               href="https://github.com/SeifEleslam"
               target="_blank"
+              aria-label="Github"
               className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]"
             >
               <Github />
@@ -25,6 +26,7 @@ export default function Header() {
             <a
               href="https://www.linkedin.com/in/seifeleslam-gouda-0a5504256"
               target="_blank"
+              aria-label="LinkedIn"
               className="h-[2.5rem] mx-[2vw] cursor-pointer hover:opacity-[1] opacity-[.75] duration-[500ms]"
             >
               <LinkedIn />
