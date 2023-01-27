@@ -347,6 +347,7 @@ export default function About({
       >
         {/* bg-[url('../src/images/contact.jpg')] */}
         <Image
+          priority={true}
           className="w-full h-full"
           src={aboutImg}
           alt={""}

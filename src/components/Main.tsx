@@ -104,7 +104,7 @@ export function Main() {
 
   const slideDown = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 1100) return;
+    if (slideData.current.last - slideData.current.prev < 1000) return;
     if (curr < appTable.length - 1 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr + 1]);
@@ -117,7 +117,7 @@ export function Main() {
 
   const slideUp = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
-    if (slideData.current.last - slideData.current.prev < 1100) return;
+    if (slideData.current.last - slideData.current.prev < 1000) return;
     if (curr > 0 && val === "one") {
       slideData.current.prev = slideData.current.last;
       setState(appTable[curr - 1]);

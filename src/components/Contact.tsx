@@ -24,6 +24,7 @@ export default function contact() {
       >
         {/* bg-[url('../src/images/contact.jpg')] */}
         <Image
+          priority={true}
           className="w-full h-full"
           src={contactImg}
           alt={""}
