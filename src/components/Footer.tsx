@@ -23,7 +23,7 @@ export default function Footer({ handleState, linkState }: FooterProps) {
   };
 
   return (
-    <div className="xl:w-fit fixed flex z-[99] mt-[2vh] xl:left-0 left-[.5vw] xl:right-auto right-0 mx-auto xl:top-10 bottom-0 xl:my-auto duration-[600ms] rounded-full">
+    <div className="xl:w-fit fixed flex xl:z-[200] z-[99] mt-[2vh] xl:left-0 left-[.5vw] xl:right-auto right-0 mx-auto xl:top-10 bottom-0 xl:my-auto duration-[600ms] rounded-full">
       {/* <button
         onClick={() => {
           setClicked(true);

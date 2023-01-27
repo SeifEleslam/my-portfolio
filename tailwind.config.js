@@ -22,7 +22,8 @@ module.exports = {
         hideup: "hideup .5s ease-in-out forwards",
         showdown: "showdown .5s ease-in-out forwards",
         hidedown: "hidedown .5s ease-in-out forwards",
-        showleft: "showleft .5s ease-in-out forwards",
+        showleft: "showleft .5s .3s ease-in-out forwards",
+        scaleleft: "scaleleft .5s ease-in-out forwards",
         hideleft: "hideleft .5s ease-in-out forwards",
         showright: "showright .5s ease-in-out forwards",
 
@@ -80,6 +81,10 @@ module.exports = {
         showright: {
           "0%": { transform: "translate(-50%)", opacity: 0 },
           "100%": { transform: "translate(0)", opacity: 1 },
+        },
+        scaleleft: {
+          "0%": { transform: "translateX(50%)" },
+          "100%": { transform: "translateX(0)" },
         },
       },
     },

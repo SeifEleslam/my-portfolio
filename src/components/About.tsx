@@ -19,6 +19,8 @@ import { Collapse } from "./util/Collapse";
 import { BiExpandAlt } from "react-icons/bi";
 import { FiMinimize2 } from "react-icons/fi";
 import { SlArrowDown } from "react-icons/sl";
+import Image from "next/image";
+import aboutImg from "../images/about.jpg";
 
 export default function About({
   state,
@@ -37,16 +39,17 @@ export default function About({
     <Element
       name="about"
       id="about"
-      className="relative overflow-hidden w-full h-full flex "
+      className="relative overflow-hidden w-[full] h-full "
     >
+      <div className="w-full h-[90%] inset-y-2 absolute " ref={ref}></div>
+
       <div
-        ref={ref}
         className={
-          (inView && state === "about" ? " animate-zoom  " : " ") +
+          (inView && state === "about" ? " animate-scaleleft  " : " ") +
           (!expand
-            ? " mt-[12vh] h-[60vh]  mx-auto md:ml-[10vw] md:w-2/3 xl:w-1/2 w-[80%] "
-            : " w-full h-full z-[1000] ") +
-          " relative origin-left z-[100] duration-500"
+            ? " mt-[12vh] h-[50vh] top-[25vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
+            : " w-full h-full z-[1000] top-0 ") +
+          " relative origin-right z-[100]  duration-500"
         }
       >
         <div
@@ -128,7 +131,7 @@ export default function About({
               } h-full ml-0 bg-[#282c34] duration-[1500ms] ease-in-out `}
             ></div>
           </div> */}
-          <div
+          {/* <div
             className={`${
               inView && state === "about" ? "animate-slideright " : " scale-0 "
             } right-0 h-full z-[1000] w-full absolute bg-[#282c34] origin-right`}
@@ -138,7 +141,7 @@ export default function About({
                 inView && state === "about" ? "animate-hesitate" : ""
               } h-full w-full ml-0 bg-[#edc769] `}
             ></div>
-          </div>
+          </div> */}
           <div className={" w-full h-full relative"}>
             <div
               className={
@@ -146,7 +149,7 @@ export default function About({
                 (aboutState === "aboutMe"
                   ? "scale-1 translate-x-0 "
                   : "scale-[.75] translate-x-[100%] opacity-0") +
-                " bg-[#272b33] duration-500 ease-in-out w-full absolute h-full overflow-hidden"
+                " backdrop-blur bg-[#272b33]/75 duration-500 ease-in-out w-full absolute h-full overflow-hidden"
               }
             >
               {!expand ? (
@@ -199,7 +202,7 @@ export default function About({
                 (aboutState === "skills"
                   ? "translate-x-0  scale-1"
                   : "-translate-x-[100%] scale-[.75] opacity-0") +
-                " bg-[#272b33]  duration-500 absolute ease-in-out w-full h-full overflow-hidden"
+                " backdrop-blur bg-[#272b33]/75 duration-500 absolute ease-in-out w-full h-full overflow-hidden"
               }
             >
               {!expand ? (
@@ -238,7 +241,7 @@ export default function About({
                     onClick={() => {
                       setCollapse("exp");
                     }}
-                    className="my-auto flex justify-between items-center p-2 bg-[#aaa] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                    className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
                   >
                     <div>Experienced At:</div>
                     <div
@@ -272,7 +275,7 @@ export default function About({
                     onClick={() => {
                       setCollapse("comf");
                     }}
-                    className="my-auto flex justify-between items-center p-2 bg-[#aaa] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                    className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
                   >
                     <div> Comfortable With:</div>
                     <div
@@ -300,7 +303,7 @@ export default function About({
                     onClick={() => {
                       setCollapse("fam");
                     }}
-                    className="my-auto flex justify-between items-center p-2 bg-[#aaa] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vw] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                    className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
                   >
                     <div> Familiar With:</div>
                     <div
@@ -333,6 +336,33 @@ export default function About({
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div
+        className={
+          "z-10 " +
+          (inView ? " animate-zoom shadow-gold " : " scale-[0.9] ") +
+          " bg-center absolute  top-[0vh] z-0  bg-cover origin-right mt-[8vh] h-[60vh]  mx-auto right-0 left-0 md:w-3/5 w-[95%] duration-500"
+        }
+      >
+        {/* bg-[url('../src/images/contact.jpg')] */}
+        <Image
+          className="w-full h-full"
+          src={aboutImg}
+          alt={""}
+          fill
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
+        <div
+          className={`${
+            inView ? "animate-slideright " : ""
+          } right-0 h-full top-0 z-[10] w-full absolute bg-[#282c34] origin-right`}
+        >
+          <div
+            className={`${
+              inView ? "animate-hesitate" : ""
+            } h-full w-full ml-0 bg-[#edc769] `}
+          ></div>
         </div>
       </div>
     </Element>
