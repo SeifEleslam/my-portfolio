@@ -15,6 +15,15 @@ import {
   Tailwind,
   Typescript,
 } from "./svgs/Skills";
+import { AiFillHtml5 } from "react-icons/ai";
+import { FaCss3Alt } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+} from "react-icons/si";
+
 import { Collapse } from "./util/Collapse";
 import { BiExpandAlt } from "react-icons/bi";
 import { FiMinimize2 } from "react-icons/fi";
@@ -216,7 +225,7 @@ export default function About({
                 <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
                   Technical Skills
                 </h1>
-                {expand && (
+                {expand && aboutState === "skills" && (
                   <>
                     <div className="p-[1vw] text-left w-full">
                       <div
@@ -238,16 +247,16 @@ export default function About({
                       <Collapse open={collapse === "exp"} height="12vh">
                         <div className="w-full h-[12vh] flex p-2">
                           <div className="h-full flex-1">
-                            <Html />
+                            <AiFillHtml5 size="100%" />
                           </div>
                           <div className="h-full flex-1">
-                            <Css />
+                            <FaCss3Alt size="100%" />
                           </div>
                           <div className="h-full flex-1">
-                            <Js />
+                            <SiJavascript size="100%" />
                           </div>
                           <div className="h-full flex-1">
-                            <React />
+                            <SiReact size="100%" />
                           </div>
                         </div>
                       </Collapse>
@@ -272,15 +281,15 @@ export default function About({
                       <Collapse open={collapse === "comf"} height="12vh">
                         <div className="w-full h-[12vh] p-2 flex duration-500">
                           <div className="h-full flex-1">
-                            <Typescript />
+                            <SiTypescript size="100%" />
                           </div>
                           <div className="h-full flex-1">
-                            <Tailwind />
+                            <SiTailwindcss size="100%" />
                           </div>
                         </div>
                       </Collapse>
                     </div>
-                    <div className="p-[1vw] text-left w-full">
+                    {/* <div className="p-[1vw] text-left w-full">
                       <div
                         onClick={() => {
                           setCollapse("fam");
@@ -314,7 +323,7 @@ export default function About({
                           </div>
                         </div>
                       </Collapse>
-                    </div>
+                    </div> */}
                   </>
                 )}
               </div>
