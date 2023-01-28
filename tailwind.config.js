@@ -23,7 +23,7 @@ module.exports = {
         showdown: "showdown .5s ease-in-out forwards",
         hidedown: "hidedown .5s ease-in-out forwards",
         showleft: "showleft .5s .3s ease-in-out forwards",
-        scaleleft: "scaleleft .5s ease-in-out forwards",
+        scaleleft: "scaleleft .5s .7s ease-in-out forwards",
         hideleft: "hideleft .5s ease-in-out forwards",
         showright: "showright .5s ease-in-out forwards",
 

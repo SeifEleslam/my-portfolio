@@ -45,11 +45,13 @@ export default function About({
 
       <div
         className={
-          (inView && state === "about" ? "   " : "  ") +
+          (inView && state === "about"
+            ? " translate-x-[0]  "
+            : " translate-x-[100vw] ") +
           (!expand
             ? " mt-[12vh] h-[50vh] top-[18vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
             : " w-full h-full z-[1000] top-0 mx-auto ") +
-          " relative origin-right z-[100]  duration-[900ms]"
+          " relative origin-right z-[100]   duration-[900ms]"
         }
       >
         <div
@@ -123,7 +125,7 @@ export default function About({
           <div className={" w-full  h-full relative"}>
             <div
               className={
-                (inView ? " shadow-3xl blur-0 " : " blur-xl ") +
+                (inView ? " shadow-3xl  " : "  ") +
                 (aboutState === "aboutMe"
                   ? "scale-1 translate-x-0 "
                   : "scale-[.75] translate-x-[100%] opacity-0") +
@@ -176,7 +178,7 @@ export default function About({
             </div>
             <div
               className={
-                (inView ? " shadow-3xl blur-0 " : " blur-xl ") +
+                (inView ? " shadow-3xl  " : " ") +
                 (aboutState === "skills"
                   ? "translate-x-0  scale-1"
                   : "-translate-x-[100%] scale-[.75] opacity-0") +
@@ -214,6 +216,107 @@ export default function About({
                 <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
                   Technical Skills
                 </h1>
+                {expand && (
+                  <>
+                    <div className="p-[1vw] text-left w-full">
+                      <div
+                        onClick={() => {
+                          setCollapse("exp");
+                        }}
+                        className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                      >
+                        <div>Experienced At:</div>
+                        <div
+                          className={
+                            (collapse === "exp" ? " rotate-180 " : " ") +
+                            " duration-500"
+                          }
+                        >
+                          <SlArrowDown size="20px" />
+                        </div>
+                      </div>
+                      <Collapse open={collapse === "exp"} height="12vh">
+                        <div className="w-full h-[12vh] flex p-2">
+                          <div className="h-full flex-1">
+                            <Html />
+                          </div>
+                          <div className="h-full flex-1">
+                            <Css />
+                          </div>
+                          <div className="h-full flex-1">
+                            <Js />
+                          </div>
+                          <div className="h-full flex-1">
+                            <React />
+                          </div>
+                        </div>
+                      </Collapse>
+                    </div>
+                    <div className="p-[1vw] text-left w-full">
+                      <div
+                        onClick={() => {
+                          setCollapse("comf");
+                        }}
+                        className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                      >
+                        <div> Comfortable With:</div>
+                        <div
+                          className={
+                            (collapse === "comf" ? " rotate-180 " : " ") +
+                            " duration-500"
+                          }
+                        >
+                          <SlArrowDown size="20px" />
+                        </div>
+                      </div>
+                      <Collapse open={collapse === "comf"} height="12vh">
+                        <div className="w-full h-[12vh] p-2 flex duration-500">
+                          <div className="h-full flex-1">
+                            <Typescript />
+                          </div>
+                          <div className="h-full flex-1">
+                            <Tailwind />
+                          </div>
+                        </div>
+                      </Collapse>
+                    </div>
+                    <div className="p-[1vw] text-left w-full">
+                      <div
+                        onClick={() => {
+                          setCollapse("fam");
+                        }}
+                        className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
+                      >
+                        <div> Familiar With:</div>
+                        <div
+                          className={
+                            (collapse === "fam" ? " rotate-180 " : " ") +
+                            " duration-500"
+                          }
+                        >
+                          <SlArrowDown size="20px" />
+                        </div>
+                      </div>
+                      <Collapse open={collapse === "fam"} height={"12vh"}>
+                        <div className="w-full h-[12vh] flex p-2">
+                          <div className="h-full flex-1">
+                            <Postgres />
+                          </div>
+                          <div className="h-full flex-1">
+                            <Nextjs />
+                          </div>
+                          <div className="h-full flex-1">
+                            <Golang />
+                          </div>
+
+                          <div className="h-full flex-1">
+                            <Docker />
+                          </div>
+                        </div>
+                      </Collapse>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
