@@ -45,11 +45,11 @@ export default function About({
 
       <div
         className={
-          (inView && state === "about" ? " animate-scaleleft  " : " ") +
+          (inView && state === "about" ? "   " : "  ") +
           (!expand
             ? " mt-[12vh] h-[50vh] top-[25vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
             : " w-full h-full z-[1000] top-0 ") +
-          " relative origin-right z-[100]  duration-500"
+          " relative origin-right z-[100]  duration-[1500ms]"
         }
       >
         <div
@@ -142,14 +142,14 @@ export default function About({
               } h-full w-full ml-0 bg-[#edc769] `}
             ></div>
           </div> */}
-          <div className={" w-full h-full relative"}>
+          <div className={" w-full  h-full relative"}>
             <div
               className={
-                (inView ? " shadow-3xl " : " ") +
+                (inView ? " shadow-3xl blur-0 " : " blur-xl ") +
                 (aboutState === "aboutMe"
                   ? "scale-1 translate-x-0 "
                   : "scale-[.75] translate-x-[100%] opacity-0") +
-                " backdrop-blur bg-[#272b33]/75 duration-500 ease-in-out w-full absolute h-full overflow-hidden"
+                " backdrop-blur bg-[#272b33]/75 duration-[1500ms] ease-in-out w-full absolute h-full overflow-hidden"
               }
             >
               {!expand ? (
@@ -198,7 +198,7 @@ export default function About({
             </div>
             <div
               className={
-                (inView ? " shadow-3xl " : " ") +
+                (inView ? " shadow-3xl blur-0 " : " blur-xl ") +
                 (aboutState === "skills"
                   ? "translate-x-0  scale-1"
                   : "-translate-x-[100%] scale-[.75] opacity-0") +

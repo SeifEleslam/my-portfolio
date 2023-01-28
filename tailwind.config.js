@@ -52,6 +52,7 @@ module.exports = {
         },
         hesitate: {
           "0%": { width: "0%" },
+          "80%": { width: "100%" },
           "100%": { width: "100%" },
         },
         showup: {

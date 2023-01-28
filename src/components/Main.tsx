@@ -147,7 +147,7 @@ export function Main() {
     Scroll.scroller.scrollTo(state, {
       duration: 1500,
       containerId: "App",
-      smooth: "easeOutCubic",
+      smooth: "easeOutQuartic",
       offset: 0,
       ignoreCancelEvents: true,
     });
