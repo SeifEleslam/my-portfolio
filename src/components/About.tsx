@@ -43,7 +43,7 @@ export default function About({
     >
       <div className="w-full h-[90%] inset-y-2 absolute " ref={ref}></div>
 
-      {/* <div
+      <div
         className={
           (inView && state === "about" ? "   " : "  ") +
           (!expand
@@ -174,7 +174,7 @@ export default function About({
                 </p>
               </div>
             </div>
-            <div
+            {/* <div
               className={
                 (inView ? " shadow-3xl blur-0 " : " blur-xl ") +
                 (aboutState === "skills"
@@ -312,10 +312,10 @@ export default function About({
                   </Collapse>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
-      </div> */}
+      </div>
       <div
         className={
           "z-10 " +
