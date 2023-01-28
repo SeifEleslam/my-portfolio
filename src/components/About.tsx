@@ -22,6 +22,8 @@ import {
   SiJavascript,
   SiTypescript,
   SiReact,
+  SiPostgresql,
+  SiDocker,
 } from "react-icons/si";
 
 import { Collapse } from "./util/Collapse";
@@ -59,7 +61,7 @@ export default function About({
             : " translate-x-[100vw] ") +
           (!expand
             ? " mt-[12vh] h-[50vh] top-[18vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
-            : " w-full h-full z-[1000] top-0 mx-auto ") +
+            : " w-full h-full z-[1000] top-0 mx-auto md:ml-[0vw]") +
           " relative origin-right z-[100]   duration-[900ms]"
         }
       >
@@ -225,7 +227,7 @@ export default function About({
                 <h1 className="mb-4 sm:text-[25px] lg:text-[35px] text-shadow py-2 text-[#d8b15d] text-center">
                   Technical Skills
                 </h1>
-                {expand && aboutState === "skills" && (
+                {aboutState === "skills" && (
                   <>
                     <div className="p-[1vw] text-left w-full">
                       <div
@@ -289,7 +291,7 @@ export default function About({
                         </div>
                       </Collapse>
                     </div>
-                    {/* <div className="p-[1vw] text-left w-full">
+                    <div className="p-[1vw] text-left w-full">
                       <div
                         onClick={() => {
                           setCollapse("fam");
@@ -309,21 +311,21 @@ export default function About({
                       <Collapse open={collapse === "fam"} height={"12vh"}>
                         <div className="w-full h-[12vh] flex p-2">
                           <div className="h-full flex-1">
-                            <Postgres />
+                            <SiPostgresql size="100%" />
                           </div>
-                          <div className="h-full flex-1">
+                          {/* <div className="h-full flex-1">
                             <Nextjs />
                           </div>
                           <div className="h-full flex-1">
                             <Golang />
-                          </div>
+                          </div> */}
 
                           <div className="h-full flex-1">
-                            <Docker />
+                            <SiDocker size="100%" />
                           </div>
                         </div>
                       </Collapse>
-                    </div> */}
+                    </div>
                   </>
                 )}
               </div>
