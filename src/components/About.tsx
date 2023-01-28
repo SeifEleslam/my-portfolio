@@ -43,13 +43,13 @@ export default function About({
     >
       <div className="w-full h-[90%] inset-y-2 absolute " ref={ref}></div>
 
-      <div
+      {/* <div
         className={
           (inView && state === "about" ? "   " : "  ") +
           (!expand
-            ? " mt-[12vh] h-[50vh] top-[25vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
+            ? " mt-[12vh] h-[50vh] top-[18vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
             : " w-full h-full z-[1000] top-0 ") +
-          " relative origin-right z-[100]  duration-[1500ms]"
+          " relative origin-right z-[100]  duration-[900ms]"
         }
       >
         <div
@@ -120,28 +120,6 @@ export default function About({
           </div>
         </div>
         <div className="w-full h-full text-[#aaa] flex  ">
-          {/* <div
-            className={`${
-              inView ? "w-0 " : "w-[100%]"
-            }  right-0 h-full absolute bg-[#d8b15d] duration-[1500ms] ease-in-out`}
-          >
-            <div
-              className={`${
-                inView ? "w-[100%] " : "w-0 "
-              } h-full ml-0 bg-[#282c34] duration-[1500ms] ease-in-out `}
-            ></div>
-          </div> */}
-          {/* <div
-            className={`${
-              inView && state === "about" ? "animate-slideright " : " scale-0 "
-            } right-0 h-full z-[1000] w-full absolute bg-[#282c34] origin-right`}
-          >
-            <div
-              className={`${
-                inView && state === "about" ? "animate-hesitate" : ""
-              } h-full w-full ml-0 bg-[#edc769] `}
-            ></div>
-          </div> */}
           <div className={" w-full  h-full relative"}>
             <div
               className={
@@ -337,7 +315,7 @@ export default function About({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div
         className={
           "z-10 " +
