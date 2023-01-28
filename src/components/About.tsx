@@ -46,6 +46,9 @@ export default function About({
   const [expand, setExpand] = useState(false);
   const [collapse, setCollapse] = useState<"exp" | "comf" | "fam">("exp");
 
+  useEffect(() => {
+    if (state !== "about") setAboutState("aboutMe");
+  }, [state]);
   return (
     <Element
       name="about"
