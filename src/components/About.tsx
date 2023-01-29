@@ -47,7 +47,10 @@ export default function About({
   const [collapse, setCollapse] = useState<"exp" | "comf" | "fam">("exp");
 
   useEffect(() => {
-    if (state !== "about") setAboutState("aboutMe");
+    if (state !== "about") {
+      setAboutState("aboutMe");
+      setExpand(false);
+    }
   }, [state]);
   return (
     <Element
@@ -65,7 +68,7 @@ export default function About({
           (!expand
             ? " mt-[12vh] h-[50vh] top-[18vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
             : " w-full h-full z-[1000] top-0 mx-auto md:ml-[0vw]") +
-          " relative origin-right z-[100]   duration-[900ms]"
+          " relative origin-right z-[100]   duration-[400ms]"
         }
       >
         <div
