@@ -10,8 +10,9 @@ export function Collapse({
   return (
     <div
       className={
-        (open ? `h-[${height}] ` : " h-0 ") +
-        " overflow-hidden duration-[300ms] ease-out "
+        (open ? `scale-y-1 ` : " scale-y-0 ") +
+        " overflow-hidden duration-[300ms] ease-out " +
+        `h-[${height}] `
       }
     >
       {children}

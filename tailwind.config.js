@@ -16,8 +16,8 @@ module.exports = {
         zoom: "zoom .6s ease-in-out forwards",
         rotatescroll: "rotatescroll .7s ease-in-out",
         slideup: "slideup .6s ease-in-out forwards",
-        slideright: "slideright .9s ease-in-out forwards",
-        hesitate: "hesitate .9s ease-in-out forwards",
+        slideright: "slideright .7s ease-in-out forwards",
+        hesitate: "hesitate .7s ease-in-out forwards",
         showup: "showup .7s  ease-in-out forwards",
         hideup: "hideup .5s ease-in-out forwards",
         showdown: "showdown .5s ease-in-out forwards",
@@ -52,7 +52,7 @@ module.exports = {
         },
         hesitate: {
           "0%": { width: "0%" },
-          "80%": { width: "100%" },
+          "90%": { width: "100%" },
           "100%": { width: "100%" },
         },
         showup: {

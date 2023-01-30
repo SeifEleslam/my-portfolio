@@ -3,18 +3,6 @@ import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import { TiChevronRightOutline, TiChevronLeftOutline } from "react-icons/ti";
 import { useInView } from "react-intersection-observer";
 import { Info, Skills } from "./svgs/AboutSections";
-import {
-  Css,
-  Docker,
-  Golang,
-  Html,
-  Js,
-  Nextjs,
-  Postgres,
-  React,
-  Tailwind,
-  Typescript,
-} from "./svgs/Skills";
 import { AiFillHtml5 } from "react-icons/ai";
 import { FaCss3Alt } from "react-icons/fa";
 import {
@@ -25,7 +13,6 @@ import {
   SiPostgresql,
   SiDocker,
 } from "react-icons/si";
-
 import { Collapse } from "./util/Collapse";
 import { BiExpandAlt } from "react-icons/bi";
 import { FiMinimize2 } from "react-icons/fi";
@@ -68,7 +55,7 @@ export default function About({
           (!expand
             ? " mt-[12vh] h-[50vh] top-[18vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
             : " w-full h-full z-[1000] top-0 mx-auto md:ml-[0vw]") +
-          " relative origin-right z-[100]   duration-[400ms]"
+          " relative origin-right z-[100]   duration-[800ms]"
         }
       >
         <div
@@ -236,101 +223,53 @@ export default function About({
                 {aboutState === "skills" && (
                   <>
                     <div className="p-[1vw] text-left w-full">
-                      <div
-                        onClick={() => {
-                          setCollapse("exp");
-                        }}
-                        className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
-                      >
-                        <div>Experienced At:</div>
-                        <div
-                          className={
-                            (collapse === "exp" ? " rotate-180 " : " ") +
-                            " duration-500"
-                          }
-                        >
-                          <SlArrowDown size="20px" />
+                      <div>Experienced At:</div>
+
+                      <div className="w-full h-[12vh] flex p-2">
+                        <div className="h-full flex-1">
+                          <AiFillHtml5 size="100%" />
+                        </div>
+                        <div className="h-full flex-1">
+                          <FaCss3Alt size="100%" />
+                        </div>
+                        <div className="h-full flex-1">
+                          <SiJavascript size="100%" />
+                        </div>
+                        <div className="h-full flex-1">
+                          <SiReact size="100%" />
                         </div>
                       </div>
-                      <Collapse open={collapse === "exp"} height="12vh">
-                        <div className="w-full h-[12vh] flex p-2">
-                          <div className="h-full flex-1">
-                            <AiFillHtml5 size="100%" />
-                          </div>
-                          <div className="h-full flex-1">
-                            <FaCss3Alt size="100%" />
-                          </div>
-                          <div className="h-full flex-1">
-                            <SiJavascript size="100%" />
-                          </div>
-                          <div className="h-full flex-1">
-                            <SiReact size="100%" />
-                          </div>
-                        </div>
-                      </Collapse>
                     </div>
                     <div className="p-[1vw] text-left w-full">
-                      <div
-                        onClick={() => {
-                          setCollapse("comf");
-                        }}
-                        className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
-                      >
-                        <div> Comfortable With:</div>
-                        <div
-                          className={
-                            (collapse === "comf" ? " rotate-180 " : " ") +
-                            " duration-500"
-                          }
-                        >
-                          <SlArrowDown size="20px" />
+                      <div> Comfortable With:</div>
+
+                      <div className="w-full h-[12vh] p-2 flex duration-500">
+                        <div className="h-full flex-1">
+                          <SiTypescript size="100%" />
+                        </div>
+                        <div className="h-full flex-1">
+                          <SiTailwindcss size="100%" />
                         </div>
                       </div>
-                      <Collapse open={collapse === "comf"} height="12vh">
-                        <div className="w-full h-[12vh] p-2 flex duration-500">
-                          <div className="h-full flex-1">
-                            <SiTypescript size="100%" />
-                          </div>
-                          <div className="h-full flex-1">
-                            <SiTailwindcss size="100%" />
-                          </div>
-                        </div>
-                      </Collapse>
                     </div>
                     <div className="p-[1vw] text-left w-full">
-                      <div
-                        onClick={() => {
-                          setCollapse("fam");
-                        }}
-                        className="my-auto flex justify-between items-center p-2 bg-[#d8b15d] shadow-xxl cursor-pointer mx-auto text-[black] text-[3vh] sm:text-[20px] lg:text-[30px] lg:text-[30px] "
-                      >
-                        <div> Familiar With:</div>
-                        <div
-                          className={
-                            (collapse === "fam" ? " rotate-180 " : " ") +
-                            " duration-500"
-                          }
-                        >
-                          <SlArrowDown size="20px" />
+                      <div> Familiar With:</div>
+
+                      <div className="w-full h-[12vh] flex p-2">
+                        <div className="h-full flex-1">
+                          <SiPostgresql size="100%" />
                         </div>
-                      </div>
-                      <Collapse open={collapse === "fam"} height={"12vh"}>
-                        <div className="w-full h-[12vh] flex p-2">
-                          <div className="h-full flex-1">
-                            <SiPostgresql size="100%" />
-                          </div>
-                          {/* <div className="h-full flex-1">
+                        {/* <div className="h-full flex-1">
                             <Nextjs />
                           </div>
                           <div className="h-full flex-1">
                             <Golang />
                           </div> */}
 
-                          <div className="h-full flex-1">
-                            <SiDocker size="100%" />
-                          </div>
+                        <div className="h-full flex-1">
+                          <SiDocker size="100%" />
                         </div>
-                      </Collapse>
+                      </div>
                     </div>
                   </>
                 )}
