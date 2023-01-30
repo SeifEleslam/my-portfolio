@@ -13,11 +13,11 @@ module.exports = {
         footer: "0 0 10px 1px #000",
       },
       animation: {
-        zoom: "zoom .6s ease-in-out forwards",
+        zoom: "zoom .9s ease-in-out forwards",
         rotatescroll: "rotatescroll .7s ease-in-out",
         slideup: "slideup .6s ease-in-out forwards",
         slideright: "slideright .7s ease-in-out forwards",
-        hesitate: "hesitate .7s ease-in-out forwards",
+        hesitate: "hesitate .7s  ease-in-out forwards",
         showup: "showup .7s  ease-in-out forwards",
         hideup: "hideup .5s ease-in-out forwards",
         showdown: "showdown .5s ease-in-out forwards",
