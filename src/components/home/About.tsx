@@ -58,7 +58,7 @@ export default function About() {
       </m.div>
       <m.div
         className={
-          "backdrop-blur bg-[#272b33]/75 w-fit md:ml-[10vw] mx-auto translate-y-[-70%] overflow-hidden mb-[6vh] shadow-3xl p-2 max-w-[90%]"
+          "backdrop-blur bg-[#272b33]/75 w-fit md:ml-[10vw] mx-auto translate-y-[-70%] overflow-hidden mb-[6vh] shadow-3xl p-2 max-w-[90%] min-h-[50vh]"
         }
         whileInView={"show"}
         initial="hide"
@@ -86,7 +86,7 @@ export default function About() {
             variants={variants2}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            I laugh in the face of errors
+            Errors are the way of my progress
             <br />
             That's why CSS is my worst enemy
           </m.p>

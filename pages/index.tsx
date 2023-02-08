@@ -8,19 +8,17 @@ export default function Home() {
 
   return (
     <LazyMotion features={domAnimation}>
-      <div>
-        <m.div
+      <div className="bgmain">
+        <div
           id="scene"
           className={
-            " md:pl-[30%] origin-bottom lg:pl-[50%] pl-0  h-full w-full inset-0 z-[0] text-right fixed"
+            "bgmain md:pl-[30%] origin-bottom lg:pl-[50%] pl-0  h-full w-full inset-0 z-[0] text-right fixed"
           }
-          initial={{ scale: 1.5 }}
-          animate={{ scale: 1, transition: { duration: 1.5 } }}
         >
           <div data-depth="0.3" className={"w-full absolute  h-full "}>
             <TargetSVG />
           </div>
-        </m.div>
+        </div>
         <Main />
       </div>
     </LazyMotion>

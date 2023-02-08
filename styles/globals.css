@@ -177,3 +177,7 @@ hr {
 .rotated-text {
   writing-mode: sideways-lr;
 }
+
+.bgmain{
+  background: linear-gradient(  #282c34 60%,#101114 );
+}
