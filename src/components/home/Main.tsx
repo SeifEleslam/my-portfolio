@@ -103,7 +103,7 @@ export function Main() {
 
   const nav = (val: string) => {
     Scroll.scroller.scrollTo(val, {
-      duration: 1500,
+      duration: 1000,
       containerId: "App",
       smooth: "easeInOutQuart",
       offset: 0,
