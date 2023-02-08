@@ -1,4 +1,4 @@
-import { Main } from "../src/components/Main";
+import { Main } from "../src/components/home/Main";
 import { useState } from "react";
 import TargetSVG from "../src/components/svgs/TargetSVG";
 import { LazyMotion, domAnimation, m } from "framer-motion";

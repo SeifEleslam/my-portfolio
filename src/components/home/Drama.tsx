@@ -1,4 +1,4 @@
-import SuitSVG from "./svgs/SuitSVG";
+import SuitSVG from "../svgs/SuitSVG";
 import { Element } from "react-scroll";
 import { m } from "framer-motion";
 

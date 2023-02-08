@@ -214,11 +214,7 @@ export function Main() {
     >
       <Header />
       <Drama handleState={handleState} state={appTable[curr]} />
-      <About
-        state={appTable[curr]}
-        aboutState={aboutState}
-        setAboutState={setAboutState}
-      />
+      <About />
       <Element
         name="projects"
         id="projects"

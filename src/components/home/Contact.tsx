@@ -1,7 +1,7 @@
 import { Element } from "react-scroll";
-import { LinkedIn, Mail } from "./svgs/Links";
+import { LinkedIn, Mail } from "../svgs/Links";
 import Image from "next/image";
-import contactImg from "../images/contact.jpg";
+import contactImg from "../../images/contact.jpg";
 import { m } from "framer-motion";
 
 export default function contact() {
