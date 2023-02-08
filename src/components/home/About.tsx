@@ -20,9 +20,18 @@ export default function About() {
   };
   const variants3 = {
     show: { y: 0 },
-    hide: { y: "120%" },
+    hide: { y: "50vh" },
   };
-
+  const container = {
+    show: {
+      opacity: 1,
+      shadow: "0 11px 41px 0 rgba(0, 0, 0, 1)",
+    },
+    hide: {
+      opacity: 0,
+      shadow: "0 11px 41px 0 rgba(0, 0, 0, 0)",
+    },
+  };
   return (
     <Element
       name="about"
@@ -58,8 +67,9 @@ export default function About() {
       </m.div>
       <m.div
         className={
-          "backdrop-blur bg-[#272b33]/75 w-fit md:ml-[10vw] mx-auto translate-y-[-70%] overflow-hidden mb-[6vh] shadow-3xl p-2 max-w-[90%] min-h-[50vh]"
+          "backdrop-blur flex flex-col justify-center bg-[#272b33]/75 w-fit md:ml-[10vw] mx-auto translate-y-[-70%] overflow-hidden mb-[6vh] shadow-3xl p-2 max-w-[90%] min-h-[50vh]"
         }
+        variants={container}
         whileInView={"show"}
         initial="hide"
       >

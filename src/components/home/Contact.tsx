@@ -9,6 +9,16 @@ export default function contact() {
     show: { x: 0 },
     hide: { x: "-120%" },
   };
+  const container = {
+    show: {
+      opacity: 1,
+      shadow: "0 11px 41px 0 rgba(0, 0, 0, 1)",
+    },
+    hide: {
+      opacity: 0,
+      shadow: "0 11px 41px 0 rgba(0, 0, 0, 0)",
+    },
+  };
 
   return (
     <Element
@@ -49,6 +59,8 @@ export default function contact() {
         }
         whileInView={"show"}
         initial="hide"
+        variants={container}
+        transition={{ duration: 0.3 }}
       >
         <m.div
           className={
@@ -67,14 +79,20 @@ export default function contact() {
             <p className="ml-[21vh]">Out</p>
           </div>
         </m.div>
-        <div className=" mx-auto w-fit ">
+        <div className="w-full ">
           <m.a
             href="mailto:seifgouda98@gmail.com"
             className={
-              " mb-[5vh] mt-[5vh] w-fit text-shadow border-l-[2px] border-[#aaa]  hover p-2 flex items-center text-[#aaa] md:text-[1.6rem] text-[1.2rem]  hover:text-[#d8b15d] focus:text-[#d8b15d]"
+              "origin-left mb-[5vh] mt-[5vh] w-fit text-shadow border-l-[2px] border-[#aaa]  hover p-2 flex items-center text-[#aaa] md:text-[1.6rem] text-[1.2rem]  hover:text-[#d8b15d] focus:text-[#d8b15d]"
             }
             variants={variants}
             transition={{ duration: 0.5, delay: 0.2 }}
+            whileHover={{
+              color: "#d8b15d",
+              scale: 1.2,
+              borderColor: "#d8b15d",
+              transition: { duration: 0.5, delay: 0 },
+            }}
           >
             <div className="md:w-[3rem] w-[2rem] md:h-[3rem] h-[2rem] mr-2">
               <Mail />
@@ -85,10 +103,16 @@ export default function contact() {
             href="https://www.linkedin.com/in/seifeleslam-gouda-0a5504256"
             target="_blank"
             className={
-              "  w-fit text-shadow border-l-[2px] border-[#aaa] hover p-2 flex items-center text-[#aaa] md:text-[1.6rem] text-[1.2rem]  hover:text-[#d8b15d] mb-4 focus:text-[#d8b15d] "
+              "origin-left w-fit text-shadow border-l-[2px] border-[#aaa] hover p-2 flex items-center text-[#aaa] md:text-[1.6rem] text-[1.2rem] mb-4 focus:text-[#d8b15d] "
             }
             variants={variants}
             transition={{ duration: 0.5, delay: 0.4 }}
+            whileHover={{
+              color: "#d8b15d",
+              scale: 1.2,
+              borderColor: "#d8b15d",
+              transition: { duration: 0.5, delay: 0 },
+            }}
           >
             <div className="md:w-[3rem] w-[2rem] md:h-[3rem] h-[2rem] mr-2">
               <LinkedIn />
