@@ -10,7 +10,6 @@ import Contact from "./Contact";
 
 export function Main() {
   const appTable = ["drama", "about", "projects", "contact"];
-  const [state, setState] = useState(appTable[0]);
   const [curr, setCurr] = useState(0);
   const ref = useRef(null);
   const [aboutState, setAboutState] = useState<"skills" | "aboutMe">("aboutMe");
@@ -80,9 +79,9 @@ export function Main() {
     var te = e.changedTouches[0].clientY;
 
     if (Math.abs(ts.current.x - teX) > Math.abs(ts.current.y - te)) {
-      if (ts.current.x > teX + 50 && state === "about") {
+      if (ts.current.x > teX + 50 && curr === 1) {
         slideRight();
-      } else if (ts.current.x < teX - 50 && state === "about") {
+      } else if (ts.current.x < teX - 50 && curr === 1) {
         slideLeft();
       }
     } else {
@@ -102,14 +101,24 @@ export function Main() {
     setAboutState("skills");
   };
 
+  const nav = (val: string) => {
+    Scroll.scroller.scrollTo(val, {
+      duration: 1500,
+      containerId: "App",
+      smooth: "easeInOutQuart",
+      offset: 0,
+      ignoreCancelEvents: true,
+    });
+  };
+
   const slideDown = (val: "one" | "all" = "one") => {
     slideData.current.last = new Date().getTime();
     if (slideData.current.last - slideData.current.prev < 1000) return;
     if (curr < appTable.length - 1 && val === "one") {
       slideData.current.prev = slideData.current.last;
-      setState(appTable[curr + 1]);
+      setCurr((prv) => prv + 1);
     } else if (curr !== appTable.length - 1 && val === "all") {
-      setState(appTable[appTable.length - 1]);
+      setCurr(appTable.length - 1);
     } else {
       return;
     }
@@ -120,9 +129,11 @@ export function Main() {
     if (slideData.current.last - slideData.current.prev < 1000) return;
     if (curr > 0 && val === "one") {
       slideData.current.prev = slideData.current.last;
-      setState(appTable[curr - 1]);
+      nav(appTable[curr - 1]);
+      setCurr((prv) => prv - 1);
     } else if (curr !== 0 && val === "all") {
-      setState(appTable[0]);
+      nav(appTable[0]);
+      setCurr(0);
     } else {
       return;
     }
@@ -144,17 +155,16 @@ export function Main() {
 
   const resize = () => {
     // setState(appTable[curr]);
-    Scroll.scroller.scrollTo(state, {
+    Scroll.scroller.scrollTo(appTable[curr], {
       duration: 1500,
       containerId: "App",
       smooth: "easeInQuint",
       offset: 0,
       ignoreCancelEvents: true,
     });
-    setCurr(appTable.indexOf(state));
   };
   const handleState = (newVal: string) => {
-    setState(newVal);
+    setCurr(appTable.indexOf(newVal) >= 0 ? appTable.indexOf(newVal) : 0);
   };
 
   const screenOri = (e: any) => {
@@ -170,17 +180,6 @@ export function Main() {
       // }px, ${-customBeta}px, 0px)`;
     }
   };
-  useEffect(() => {
-    Scroll.scroller.scrollTo(state, {
-      duration: 1500,
-      containerId: "App",
-      smooth: "easeInOutQuart",
-      offset: 0,
-      ignoreCancelEvents: true,
-    });
-    setCurr(appTable.indexOf(state));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state]);
 
   useEffect(() => {
     if (window.WheelEvent) document.body.addEventListener("wheel", slide);
@@ -203,6 +202,10 @@ export function Main() {
     };
   });
 
+  useEffect(() => {
+    nav(appTable[curr]);
+  }, [curr]);
+
   return (
     <div
       ref={ref}
@@ -210,9 +213,9 @@ export function Main() {
       className="App absolute overflow-hidden w-full h-full"
     >
       <Header />
-      <Drama handleState={handleState} state={state} />
+      <Drama handleState={handleState} state={appTable[curr]} />
       <About
-        state={state}
+        state={appTable[curr]}
         aboutState={aboutState}
         setAboutState={setAboutState}
       />
@@ -225,7 +228,7 @@ export function Main() {
       </Element>
       <Contact />
 
-      <Footer linkState={state} handleState={handleState} />
+      <Footer linkState={appTable[curr]} handleState={handleState} />
     </div>
   );
 }

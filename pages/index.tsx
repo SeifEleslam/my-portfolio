@@ -1,48 +1,28 @@
-import Head from "next/head";
 import { Main } from "../src/components/Main";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import TargetSVG from "../src/components/svgs/TargetSVG";
-import { useInView } from "react-intersection-observer";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 export default function Home() {
   const [loaded, setLoaded] = useState(false);
-  const [ref, inView] = useInView();
-
-  // const mouseMove = (e: any) => {
-  //   const X = e.clientX - 450;
-  //   const Y = e.clientY - 450;
-  //   const el = document.getElementById("target");
-  //   if (el) el.style.transform = `translate3d(${-X / 7}px, ${-(Y / 7)}px, 0px)`;
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("mousemove", mouseMove);
-  //   return () => {
-  //     window.removeEventListener("mousemove", mouseMove);
-  //   };
-  // });
 
   return (
-    <>
-      {/* <div className="animate-slideup w-[100vw] bg-[#282c34] z-[100] h-[100vh] flex absolute justify-center items-center">
-        <div className="inline h-[60vh]">
-          <TargetSVG motion={false} rotate={true} />
-        </div>
-      </div> */}
-      <div ref={ref}>
-        <div
+    <LazyMotion features={domAnimation}>
+      <div>
+        <m.div
           id="scene"
           className={
-            (inView ? " scale-[1] " : " scale-[1.5] opacity-0 ") +
-            " md:pl-[30%] origin-bottom lg:pl-[50%] pl-0 duration-1000 h-full w-full inset-0 z-[0] text-right fixed"
+            " md:pl-[30%] origin-bottom lg:pl-[50%] pl-0  h-full w-full inset-0 z-[0] text-right fixed"
           }
+          initial={{ scale: 1.5 }}
+          animate={{ scale: 1, transition: { duration: 1.5 } }}
         >
           <div data-depth="0.3" className={"w-full absolute  h-full "}>
             <TargetSVG />
           </div>
-        </div>
+        </m.div>
         <Main />
       </div>
-    </>
+    </LazyMotion>
   );
 }

@@ -19,6 +19,7 @@ import { FiMinimize2 } from "react-icons/fi";
 import { SlArrowDown } from "react-icons/sl";
 import Image from "next/image";
 import aboutImg from "../images/about.jpg";
+import { m } from "framer-motion";
 
 export default function About({
   state,
@@ -31,32 +32,33 @@ export default function About({
 }) {
   const [ref, inView] = useInView();
   const [expand, setExpand] = useState(false);
-  const [collapse, setCollapse] = useState<"exp" | "comf" | "fam">("exp");
 
-  useEffect(() => {
-    if (state !== "about") {
-      setAboutState("aboutMe");
-      setExpand(false);
-    }
-  }, [state]);
+  // useEffect(() => {
+  //   if (state !== "about") {
+  //     setAboutState("aboutMe");
+  //     setExpand(false);
+  //   }
+  // }, [state]);
+
   return (
     <Element
       name="about"
       id="about"
-      className="relative overflow-hidden w-[full] h-full "
+      className="relative overflow-hidden w-full h-full "
     >
       <div className="w-full h-[90%] inset-y-2 absolute " ref={ref}></div>
 
-      <div
+      <m.div
         className={
-          (inView && state === "about"
-            ? " translate-x-[0]  "
-            : " translate-x-[100vw] ") +
           (!expand
             ? " mt-[12vh] h-[50vh] top-[18vh] mx-auto md:ml-[50vw] w-[80%] md:w-2/5 xl:w-1/3 "
-            : " w-full h-full z-[1000] top-0 mx-auto md:ml-[0vw]") +
-          " relative origin-right z-[100]   duration-[800ms]"
+            : " w-[100%] h-[100%] top-0 mx-auto md:ml-[0vw]") +
+          " relative duration-500 origin-right z-[200]"
         }
+        initial={{ scaleY: 0.1 }}
+        whileInView={{
+          scaleY: 1,
+        }}
       >
         <div
           className={
@@ -277,13 +279,13 @@ export default function About({
             </div>
           </div>
         </div>
-      </div>
-      <div
+      </m.div>
+      <m.div
         className={
-          "z-10 " +
-          (inView ? " animate-zoom shadow-gold " : " scale-[0.9] ") +
-          " bg-center absolute  top-[0vh] z-0  bg-cover origin-right mt-[8vh] h-[60vh]  mx-auto right-0 left-0 md:w-3/5 w-[95%] duration-500"
+          " bg-center absolute shadow-gold top-[0vh] z-10  bg-cover origin-right mt-[8vh] h-[60vh]  mx-auto right-0 left-0 md:w-3/5 w-[95%]"
         }
+        initial={{ scale: 0.8 }}
+        whileInView={{ scale: 1, transition: { duration: 0.7 } }}
       >
         {/* bg-[url('../src/images/contact.jpg')] */}
         <Image
@@ -294,18 +296,18 @@ export default function About({
           fill
           style={{ objectFit: "cover", objectPosition: "center" }}
         />
-        <div
-          className={`${
-            inView ? "animate-slideright " : ""
-          } right-0 h-full top-0 z-[10] w-full absolute bg-[#282c34] origin-right`}
+        <m.div
+          className={`right-0 h-full top-0 z-[10] w-full absolute bg-[#282c34] origin-right`}
+          initial={{ scaleX: 1 }}
+          whileInView={{ scaleX: 0, transition: { duration: 0.5 } }}
         >
-          <div
-            className={`${
-              inView ? "animate-hesitate" : ""
-            } h-full w-full ml-0 bg-[#edc769] `}
-          ></div>
-        </div>
-      </div>
+          <m.div
+            className={`h-full w-full ml-0 bg-[#edc769] origin-left`}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1, transition: { duration: 0.5 } }}
+          ></m.div>
+        </m.div>
+      </m.div>
     </Element>
   );
 }

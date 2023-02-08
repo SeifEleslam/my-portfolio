@@ -1,6 +1,6 @@
 import SuitSVG from "./svgs/SuitSVG";
 import { Element } from "react-scroll";
-import { useInView } from "react-intersection-observer";
+import { m } from "framer-motion";
 
 export default function Drama({
   state,
@@ -9,29 +9,39 @@ export default function Drama({
   state: string;
   handleState: (val: string) => void;
 }) {
-  const [ref, inView] = useInView();
-  const [ref2, inView2] = useInView();
+  const tx1 = {
+    show: { y: 0, transition: { duration: 0.5, delay: 0.5 } },
+    hide: { y: 400 },
+  };
+  const tx2 = {
+    show: {
+      y: 0,
 
+      rotate: 90,
+      transition: { duration: 0.5, delay: 0.5 },
+    },
+    hide: { y: 400, rotate: 0 },
+  };
   return (
     <Element name="drama" id="drama" className="overflow-hidden w-full h-full">
-      <div
-        ref={ref}
+      <m.div
         className={
-          (inView ? " animate-zoom shadow-gold " : " opacity-0 ") +
-          " bg-[#222]/25 origin-left backdrop-blur overflow-hidden lg:ml-[12vw] mt-[15vh] lg:w-[45%] w-auto z-10 relative duration-[1000ms]"
+          " bg-[#222]/25 origin-left backdrop-blur overflow-hidden lg:ml-[12vw] mt-[15vh] lg:w-[45%] w-auto z-10 relative"
         }
+        initial={{ scale: 0.9 }}
+        whileInView={{ scale: 1, transition: { duration: 0.7 } }}
       >
-        <div
-          className={`${
-            inView ? "animate-slideright " : ""
-          } right-0 h-full z-[1000] w-full absolute bg-[#282c34] origin-right`}
+        <m.div
+          className={`right-0 h-full z-[1000] w-full absolute bg-[#282c34] origin-right`}
+          initial={{ scaleX: 1 }}
+          whileInView={{ scaleX: 0, transition: { duration: 0.5 } }}
         >
-          <div
-            className={`${
-              inView ? "animate-hesitate" : ""
-            } h-full w-full ml-0 bg-[#edc769] `}
-          ></div>
-        </div>
+          <m.div
+            className={`h-full w-full ml-0 bg-[#edc769] origin-left`}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1, transition: { duration: 0.5 } }}
+          ></m.div>
+        </m.div>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
         <p className="leading-[8vh] text-[4rem] lg:text-[6rem] Alumni text-[#d8b15d] text-shadow">
           Manners
@@ -43,44 +53,41 @@ export default function Drama({
           Man
         </p>
         <div className="my-[2vh] bg-[#aaa] shadow h-[1vh]"></div>
-      </div>
+      </m.div>
 
-      <div
-        className={
-          (state === "drama" ? " animate-showleft " : " animate-hideleft ") +
-          // (state !== "drama" ? "animate-hideleft " : " ") +
-          " md:pl-[30%] lg:pl-[50%] pl-0 duration-[500ms] opacity-0 h-full w-full absolute inset-0 z-[0] text-right "
-        }
+      <m.div
+        className=" md:pl-[30%] lg:pl-[50%] pl-0 h-[98%] w-full absolute inset-0 z-[0] text-right "
+        initial={{ x: 200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5 } }}
       >
         <SuitSVG />
-      </div>
-      <div
-        ref={ref2}
+      </m.div>
+      <m.div
         className={
           " mx-auto w-[90vw] left-0 right-0 lg:ml-[12vw] overflow-hidden absolute md:bottom-[5vh] bottom-[3vh] py-[16vh] mx-auto md:relative z-[10]"
         }
+        whileInView={"show"}
+        initial={"hide"}
       >
-        <p
-          className={
-            (inView ? " animate-showup " : " opacity-0 ") +
-            " text-shadow lg:text-[3rem] text-[2rem] text-[#aaa]"
-          }
+        <m.p
+          className={" text-shadow lg:text-[3rem] text-[2rem] text-[#aaa]"}
+          variants={tx1}
         >
           Are we gonna stand here all day or you gonna
-        </p>
-        <button
+        </m.p>
+        <m.button
           id="scroll"
           onClick={() => {
             handleState("about");
           }}
           className={
-            (inView ? "animate-rotatescroll " : " opacity-0 ") +
-            " lg:text-[3rem] text-[2rem] mt-[3vh] rotate-90 text-[#d8b15d] pl-[1vh] duration-[400ms] active:translate-y-[2vh] text-shadow"
+            " lg:text-[3rem] text-[2rem] mt-[3vh] rotate-90 text-[#d8b15d] pl-[1vh] active:translate-y-[2vh] text-shadow"
           }
+          variants={tx2}
         >
           Scroll?
-        </button>
-      </div>
+        </m.button>
+      </m.div>
     </Element>
   );
 }

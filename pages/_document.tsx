@@ -11,10 +11,9 @@ export default function Document() {
         content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no,"
       />
       <link
+        href="https://fonts.googleapis.com/css?family=Alumni Sans"
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Audiowide|Sofia|Trirong"
       />
-
       <link rel="icon" href="favicon.ico" />
       <body>
         <Main />
