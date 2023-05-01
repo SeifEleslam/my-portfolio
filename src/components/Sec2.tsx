@@ -54,7 +54,7 @@ export const Sec2 = () => {
                 y: -10,
                 boxShadow: "0 10px 50px -10px #d8b15d",
               }}
-              href={"/resume.pdf"}
+              href={"/my-portfolio/resume.pdf"}
               target="_blank"
               className="mx-auto sm:mx-0 text-black space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full grdprim "
             >
