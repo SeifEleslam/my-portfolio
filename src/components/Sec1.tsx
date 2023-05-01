@@ -23,7 +23,7 @@ export const Sec1 = () => {
         viewport={{ once: true }}
         className="text-shadow text-center md:text-left w-full max-w-[50rem] px-12"
       >
-        <h3>فما انقادت الآمال إلا لصابر</h3>
+        <h1>فما انقادت الآمال إلا لصابر</h1>
       </motion.div>
       <motion.div
         initial={{ filter: "blur(200px)" }}

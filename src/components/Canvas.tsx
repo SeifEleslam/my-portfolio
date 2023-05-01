@@ -44,10 +44,10 @@ export default function Canvas() {
     function draw() {
       let _px, _py;
       var grd = $.createRadialGradient(
-        0.65 * c.width,
+        0.5 * c.width,
         0.4 * c.height,
-        0.15 * c.height,
-        0.7 * c.width,
+        0.1 * c.height,
+        0.44 * c.width,
         0.2 * c.height,
         c.height
       );
