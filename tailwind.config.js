@@ -21,6 +21,7 @@ module.exports = {
         "3xl": "0 11px 41px 0 rgba(0, 0, 0, 1)",
         xxl: "0 -1px 21px 0 rgba(0, 0, 0, 1)",
         gold: "0 10px 50px -10px #d8b15d",
+        gold1: "0 0px 50px -10px #d8b15d",
       },
     },
   },

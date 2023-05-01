@@ -4,6 +4,8 @@ import proj1 from "../assets/proj1.png";
 import proj2 from "../assets/proj2.png";
 import { VscGithub } from "react-icons/vsc";
 import { ImLink } from "react-icons/im";
+import { motion } from "framer-motion";
+import { GrCodepen } from "react-icons/gr";
 
 export const Sec4 = () => {
   const selectedProjects = [
@@ -65,11 +67,18 @@ export const Sec4 = () => {
           </div>
         );
       })}
-      <div className="pb-12 flex flex-col justify-center items-center w-full sm:flex-row">
+      <div className="pb-12 flex flex-col justify-center items-center w-full">
         <h1 className="text-white text-2xl text-center">
-          See the rest of my work in GIthub and Codepen
+          See the rest of my work in Github and Codepen
         </h1>
-        <div></div>
+        <div className="flex mt-10 justify-center items-center space-x-8">
+          <Link link="https://codepen.io/SeifEleslam">
+            <GrCodepen size={"100%"} />
+          </Link>
+          <Link link="https://github.com/SeifEleslam">
+            <VscGithub size={"100%"} />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -79,7 +88,7 @@ const Proj = ({ source, link }: { source: any; link: string }) => {
   return (
     <div className="relative min-w-[20rem] max-w-full  aspect-square">
       <Image
-        className="absolute w-full h-full object-fit "
+        className=" absolute  w-full h-full object-fit "
         src={frame}
         alt=""
       />
@@ -89,11 +98,52 @@ const Proj = ({ source, link }: { source: any; link: string }) => {
         className="absolute w-full h-full overflow-clip rounded-full  border-[10px] border-prim scale-[.52]"
       >
         <Image
-          className="w-full duration-1000 hover:scale-[1.4] h-full object-cover"
+          className="w-full grayscale hover:grayscale-0 duration-1000 hover:scale-[1.4] h-full object-cover"
           src={source}
           alt=""
         />
       </a>
     </div>
+  );
+};
+
+export const Link = ({
+  children,
+  link,
+}: {
+  children: React.ReactNode;
+  link: string;
+}) => {
+  const variants = {
+    hover: { color: "#03001C" },
+  };
+  const bgVariants = {
+    hover: { backgroundColor: "#d8b15d", rotate: "45deg" },
+  };
+  const bgVariants1 = {
+    hover: { rotate: 90 },
+  };
+  return (
+    <motion.a
+      href={link}
+      target="_blank"
+      variants={variants}
+      initial={{ color: "#d8b15d" }}
+      whileHover="hover"
+      className="relative rotate-45 p-2 rounded w-14 h-14"
+    >
+      <div className="z-10 -rotate-45 relative">{children}</div>
+
+      <motion.div
+        initial={{ rotate: 0 }}
+        variants={bgVariants}
+        className="absolute z-0 w-full h-full rounded left-0 top-0 border-prim border-[1px] rotate-45"
+      ></motion.div>
+      <motion.div
+        initial={{ rotate: 0 }}
+        variants={bgVariants1}
+        className="absolute z-0 w-full h-full rounded left-0 top-0 border-prim border-[1px] rotate-45"
+      ></motion.div>
+    </motion.a>
   );
 };
