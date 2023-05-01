@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Reqa";   /*Can be any text*/
+  src: local("reqa"),
+    url("../assets/fonts/reqa.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Eng";
+  /*Can be any text*/
+  src: local("eng"),
+    url("../assets/fonts/eng.ttf") format("truetype");
+}
+
+.reqa {
+  font-family: "Reqa";
+}
+.eng {
+  font-family: "Eng";
+}
+.text-shadow {
+  text-shadow: 2px 2px 8px #000;
+}
+.grdprim {
+  background: linear-gradient(0.35turn, #d8b15d, #FF7844);
+}
+.text-grad {
+  background: -webkit-linear-gradient( 0.35turn,#d8b15d, #FF7844);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+body {
+  background-color: #03001C ;
+}
+html {
+  scroll-behavior: smooth;
+}
