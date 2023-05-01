@@ -72,10 +72,10 @@ export const Sec4 = () => {
           See the rest of my work in Github and Codepen
         </h1>
         <div className="flex mt-10 justify-center items-center space-x-8">
-          <Link link="https://codepen.io/SeifEleslam">
+          <Link color="#d8b15d" link="https://codepen.io/SeifEleslam">
             <GrCodepen size={"100%"} />
           </Link>
-          <Link link="https://github.com/SeifEleslam">
+          <Link color="#d8b15d" link="https://github.com/SeifEleslam">
             <VscGithub size={"100%"} />
           </Link>
         </div>
@@ -110,15 +110,17 @@ const Proj = ({ source, link }: { source: any; link: string }) => {
 export const Link = ({
   children,
   link,
+  color,
 }: {
   children: React.ReactNode;
   link: string;
+  color: string;
 }) => {
   const variants = {
     hover: { color: "#03001C" },
   };
   const bgVariants = {
-    hover: { backgroundColor: "#d8b15d", rotate: "45deg" },
+    hover: { backgroundColor: color, rotate: "45deg" },
   };
   const bgVariants1 = {
     hover: { rotate: 90 },
@@ -128,21 +130,21 @@ export const Link = ({
       href={link}
       target="_blank"
       variants={variants}
-      initial={{ color: "#d8b15d" }}
+      initial={{ color: color }}
       whileHover="hover"
-      className="relative rotate-45 p-2 rounded w-14 h-14"
+      className="relative rotate-45 p-3 rounded w-14 h-14"
     >
       <div className="z-10 -rotate-45 relative">{children}</div>
 
       <motion.div
         initial={{ rotate: 0 }}
         variants={bgVariants}
-        className="absolute z-0 w-full h-full rounded left-0 top-0 border-prim border-[1px] rotate-45"
+        className={`absolute z-0 w-full h-full rounded left-0 top-0 border-[${color}] border-[1px] rotate-45`}
       ></motion.div>
       <motion.div
         initial={{ rotate: 0 }}
         variants={bgVariants1}
-        className="absolute z-0 w-full h-full rounded left-0 top-0 border-prim border-[1px] rotate-45"
+        className={`absolute z-0 w-full h-full rounded left-0 top-0 border-[${color}] border-[1px] rotate-45`}
       ></motion.div>
     </motion.a>
   );

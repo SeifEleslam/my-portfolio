@@ -20,12 +20,15 @@ export const Navbar = ({ index }: { index: number }) => {
         viewport={{ once: true }}
         className={` h-16 rounded-full w-16 sm:h-20 shadow-gold1  z-10 sm:w-20 absolute sm:-bottom-10 -bottom-8 left-0 right-0 mx-auto bg-prim`}
       >
-        <motion.div className="absolute z-0 w-full h-full rounded left-0 top-0 border-prim border-[3px] rotate-45"></motion.div>
-        <div className="w-full h-full scale-75">
-          <AnimatePresence>
-            <Icon icon={index} key={index} />
-          </AnimatePresence>
+        <div className="bg-prim w-full h-full rounded-full">
+          <div className="z-10 w-full h-full scale-75">
+            <AnimatePresence>
+              <Icon icon={index} key={index} />
+            </AnimatePresence>
+          </div>
         </div>
+
+        <motion.div className="absolute z-[-10] w-full h-full rounded bg-bgprim left-0 top-0 border-prim border-[3px] rotate-45"></motion.div>
       </motion.div>
       <motion.div
         initial={{ scale: 0 }}

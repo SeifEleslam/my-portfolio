@@ -12,7 +12,7 @@ export const Sec2 = () => {
         </h1>
         <div className="sm:max-w-full text-white flex flex-col sm:flex-row justify-between items-center space-x-4 space-y-4 bg-black/50  w-full shadow-3xl rounded-lg sm:rounded-full">
           <motion.div
-            initial={{ filter: "blur(200px)" }}
+            initial={{ filter: "blur(100px)" }}
             whileInView={{
               filter: "blur(0)",
               transition: { duration: 1 },
