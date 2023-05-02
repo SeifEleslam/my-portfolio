@@ -34,7 +34,7 @@ export const Sec1 = () => {
         viewport={{ once: true }}
         className="absolute top-[60%] text-left w-full max-w-[50rem] px-12"
       >
-        <p className="text-lg text-gray-500"> المتنبي --</p>
+        <p className="text-lg text-gray-500"> جاسم بن عوف --</p>
       </motion.div>
     </div>
   );
