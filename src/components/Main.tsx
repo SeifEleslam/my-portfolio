@@ -1,7 +1,7 @@
 import { Sec1 } from "@/components/Sec1";
 import { Navbar } from "@/components/Navbar";
 import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Sec2 } from "@/components/Sec2";
 import { Sec3 } from "@/components/Sec3";
 import { Sec4 } from "./Sec4";
@@ -71,17 +71,33 @@ export const Main = () => {
       <div id="sec5" ref={ref5}>
         <Sec5 />
       </div>
-      <div className="w-[80%] mx-auto relative h-60">
+      <motion.div
+        initial={{ filter: "blur(100px)" }}
+        whileInView={{
+          filter: "blur(0)",
+          transition: { duration: 1 },
+        }}
+        viewport={{ once: true }}
+        className="w-[80%] mx-auto relative h-60"
+      >
         <div className="w-full h-full flex justify-center items-center">
           <div className="absolute h-full w-full left-0 top-3">
             <Image className="h-full w-full" src={end3} alt="" />
           </div>
           <p className="text-2xl text-prim">End</p>
         </div>
-      </div>
-      <div className="rotate-180 w-[80%] mx-auto relative h-40">
-        <Image className="h-full w-full" src={end} alt="" />
-      </div>
+      </motion.div>
+      <motion.div
+        initial={{ filter: "blur(100px)" }}
+        whileInView={{
+          filter: "blur(0)",
+          transition: { delay: 0.6, duration: 1 },
+        }}
+        viewport={{ once: true }}
+        className="w-[80%] mx-auto relative h-40"
+      >
+        <Image className="h-full w-full" src={end2} alt="" />
+      </motion.div>
     </main>
   );
 };

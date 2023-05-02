@@ -27,16 +27,7 @@ export const Sec2 = () => {
           </motion.div>
           <div className="sm:max-w-[60%] ">
             <div className=" overflow-clip">
-              <motion.div
-                initial={{ x: 100, opacity: 0 }}
-                whileInView={{
-                  x: 0,
-                  opacity: 1,
-                  transition: { duration: 1 },
-                }}
-                viewport={{ once: true }}
-                className="w-full sm:p-2 p-0 text-xl sm:text-lg"
-              >
+              <div className="w-full sm:p-2 p-0 text-xl sm:text-lg">
                 <p className="text-prim text-3xl">Hello There, </p>
                 <br />
                 <p>
@@ -47,7 +38,7 @@ export const Sec2 = () => {
                   provide a remarkable user experience.
                 </p>
                 <br />
-              </motion.div>
+              </div>
             </div>
             <motion.a
               whileHover={{
