@@ -125,6 +125,7 @@ export const Link = ({
   const bgVariants1 = {
     hover: { rotate: 90 },
   };
+  const border = "border-[" + color + "]";
   return (
     <motion.a
       href={link}
@@ -137,14 +138,16 @@ export const Link = ({
       <div className="z-10 -rotate-45 relative">{children}</div>
 
       <motion.div
+        style={{ borderColor: color }}
         initial={{ rotate: 0 }}
         variants={bgVariants}
-        className={`absolute z-0 w-full h-full rounded left-0 top-0 border-[${color}] border-[1px] rotate-45`}
+        className={`absolute z-0 w-full h-full rounded left-0 top-0 border-[1px] rotate-45`}
       ></motion.div>
       <motion.div
+        style={{ borderColor: color }}
         initial={{ rotate: 0 }}
         variants={bgVariants1}
-        className={`absolute z-0 w-full h-full rounded left-0 top-0 border-[${color}] border-[1px] rotate-45`}
+        className={`absolute z-0 w-full h-full rounded left-0 top-0 border-[1px] rotate-45`}
       ></motion.div>
     </motion.a>
   );

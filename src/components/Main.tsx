@@ -8,6 +8,8 @@ import { Sec4 } from "./Sec4";
 import { Sec5 } from "./Sec5";
 import Image from "next/image";
 import end from "../assets/end.svg";
+import end2 from "../assets/end2.svg";
+import end3 from "../assets/end3.svg";
 
 export const Main = () => {
   const ref1 = useRef(null);
@@ -36,13 +38,9 @@ export const Main = () => {
     if (sec4 === true && sec5 === false) setState(3);
   }, [sec4, sec5]);
   useEffect(() => {
-    console.log(sec5, sec4);
-
     if (sec5 === true) setState(4);
   }, [sec5]);
-  useEffect(() => {
-    console.log(state);
-  }, [state]);
+
   return (
     <main>
       <Navbar index={state} />
@@ -72,6 +70,17 @@ export const Main = () => {
       </div>
       <div id="sec5" ref={ref5}>
         <Sec5 />
+      </div>
+      <div className="w-[80%] mx-auto relative h-60">
+        <div className="w-full h-full flex justify-center items-center">
+          <div className="absolute h-full w-full left-0 top-3">
+            <Image className="h-full w-full" src={end3} alt="" />
+          </div>
+          <p className="text-2xl text-prim">End</p>
+        </div>
+      </div>
+      <div className="rotate-180 w-[80%] mx-auto relative h-40">
+        <Image className="h-full w-full" src={end} alt="" />
       </div>
     </main>
   );
