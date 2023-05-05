@@ -53,7 +53,10 @@ export const Sec5 = () => {
           </Link>
         </div>
         <div className="h-[3px] w-[50%] bg-prim mx-auto my-10"></div>
-        <p className="text-center text-white text-2xl">
+        <h1 className="text-shadow mb-10 text-3xl sm:text-4xl text-center text-prim  ">
+          References
+        </h1>
+        <p className="text-center text-white text-xl">
           Background Canvas designed and coded by{" "}
           <a
             href="https://codepen.io/tmrDevelops"

@@ -48,9 +48,20 @@ const Icon = ({ icon }: { icon: number }) => {
   return (
     <motion.div
       className="w-full absolute left-0 top-0 h-full"
-      exit={{ y: -100, opacity: 0 }}
-      initial={{ y: 100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
+      exit={{
+        rotate: -180,
+        opacity: 0,
+        transition: { duration: 0.5, type: "tween" },
+      }}
+      initial={{
+        rotate: 180,
+        opacity: 0,
+      }}
+      animate={{
+        rotate: 0,
+        opacity: 1,
+        transition: { duration: 0.5, type: "tween" },
+      }}
     >
       <Image src={state[icon]} alt={""} />
     </motion.div>
