@@ -1,6 +1,7 @@
 import Image from "next/image";
 import me from "../assets/me2.jpg";
-import resumeico from "../assets/resume.svg";
+import pdf from "../assets/pdf.svg";
+import docx from "../assets/docx.svg";
 import { motion } from "framer-motion";
 
 export const Sec2 = () => {
@@ -40,22 +41,41 @@ export const Sec2 = () => {
                 <br />
               </div>
             </div>
-            <motion.a
-              whileHover={{
-                y: -10,
-                boxShadow: "0 10px 50px -10px #d8b15d",
-              }}
-              href={"resume.pdf?"}
-              target="_blank"
-              className="mx-auto sm:mx-0 text-black space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full grdprim "
-            >
-              <Image
-                src={resumeico}
-                className="w-[2.5rem] inline-block"
-                alt="resume"
-              />
-              <p>My Resume</p>
-            </motion.a>
+            <div className="text-white flex justify-centert items-center space-x-2">
+              <motion.a
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 10px 50px -10px #ad0b00",
+                }}
+                href={"resume.pdf?"}
+                target="_blank"
+                className="mx-auto sm:mx-0 space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#ad0b00] "
+              >
+                <Image
+                  src={pdf}
+                  className="w-[2.5rem] inline-block"
+                  alt="resume"
+                />
+                <p>Resume | pdf</p>
+              </motion.a>
+              <motion.a
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 10px 50px -10px #0057bb",
+                }}
+                href={"resume.docx?"}
+                target="_blank"
+                className="mx-auto sm:mx-0 sm:space-x-2 space-x-0 sm:space-y-0 space-y-4  flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#0057bb] "
+              >
+                <Image
+                  src={docx}
+                  className="w-[2.5rem] inline-block"
+                  alt="resume"
+                />
+                <p>Resume | docx</p>
+              </motion.a>
+            </div>
+
             <br />
           </div>
         </div>
