@@ -11,24 +11,25 @@ export const Sec2 = () => {
         <h1 className="text-shadow mb-20 text-5xl sm:text-6xl text-center text-prim  ">
           About Me
         </h1>
-        <div className="sm:max-w-full text-white flex flex-col sm:flex-row justify-between items-center space-x-4 space-y-4 bg-black/50  w-full shadow-3xl rounded-lg sm:rounded-full">
+        <div className="sm:max-w-full md:space-x-5 space-x-0 text-white flex flex-col md:flex-row justify-between  bg-black/50  w-full shadow-3xl rounded-lg lg:rounded-full">
           <motion.div
             initial={{ filter: "blur(100px)" }}
             whileInView={{
               filter: "blur(0)",
               transition: { duration: 1 },
             }}
-            className="w-full"
+            className="w-full flex items-center"
           >
             <Image
-              className="mx-auto object-cover max-h-[25rem] w-full rounded-lg sm:rounded-full"
+              className="mx-auto object-cover h-full max-h-[25rem] w-full rounded-lg lg:rounded-full"
               src={me}
               alt=""
             />
           </motion.div>
-          <div className="sm:max-w-[60%] ">
+          <div className="md:max-w-[60%] ">
             <div className=" overflow-clip">
               <div className="w-full sm:p-2 p-0 text-xl sm:text-lg">
+                <br />
                 <p className="text-prim text-3xl">Hello There, </p>
                 <br />
                 <p>
@@ -41,7 +42,7 @@ export const Sec2 = () => {
                 <br />
               </div>
             </div>
-            <div className="text-white flex justify-centert items-center space-x-2">
+            <div className="text-white flex flex-col md:flex-row justify-center space-y-5 md:space-y-0 items-center md:space-x-2 space-x-0">
               <motion.a
                 whileHover={{
                   y: -10,
@@ -49,7 +50,7 @@ export const Sec2 = () => {
                 }}
                 href={"resume.pdf?"}
                 target="_blank"
-                className="mx-auto sm:mx-0 space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#ad0b00] "
+                className="mx-auto md:mx-0 space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#ad0b00] "
               >
                 <Image
                   src={pdf}
@@ -65,7 +66,7 @@ export const Sec2 = () => {
                 }}
                 href={"resume.docx?"}
                 target="_blank"
-                className="mx-auto sm:mx-0 sm:space-x-2 space-x-0 sm:space-y-0 space-y-4  flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#0057bb] "
+                className="mx-auto md:mx-0 space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#0057bb] "
               >
                 <Image
                   src={docx}
@@ -75,7 +76,6 @@ export const Sec2 = () => {
                 <p>Resume | docx</p>
               </motion.a>
             </div>
-
             <br />
           </div>
         </div>
