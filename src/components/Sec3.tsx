@@ -6,6 +6,7 @@ import {
   TbBrandJavascript,
   TbBrandTailwind,
 } from "react-icons/tb";
+import {SiAngularjs} from "react-icons/si";
 import ts from "../assets/typescript.svg";
 import next from "../assets/next.svg";
 export const Sec3 = () => {
@@ -31,8 +32,12 @@ export const Sec3 = () => {
       title: "Tailwind",
     },
     {
-      icon: <Image src={next} className="w-full scale-75" alt="" />,
+      icon:<Image src={next} className="w-full scale-75" alt="" />, 
       title: "NextJS",
+    },
+     {
+      icon: <SiAngularjs size={"100%"} />,
+      title: "Angularjs",
     },
   ];
   return (
