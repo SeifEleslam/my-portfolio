@@ -36,7 +36,7 @@ export const Sec3 = () => {
       title: "NextJS",
     },
      {
-      icon: <SiAngularjs size={"100%"} />,
+      icon: <SiAngularjs size={"85%"} />,
       title: "Angularjs",
     },
   ];
