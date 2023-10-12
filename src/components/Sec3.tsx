@@ -6,7 +6,7 @@ import {
   TbBrandJavascript,
   TbBrandTailwind,
 } from "react-icons/tb";
-import {SiAngularjs} from "react-icons/si";
+import { SiAngularjs } from "react-icons/si";
 import ts from "../assets/typescript.svg";
 import next from "../assets/next.svg";
 export const Sec3 = () => {
@@ -24,7 +24,7 @@ export const Sec3 = () => {
       title: "JavaSCript",
     },
     {
-      icon: <Image src={ts} className="w-full scale-75" alt="" />,
+      icon: <Image src={ts} className="w-full sm:scale-75" alt="" />,
       title: "TypeScript",
     },
     {
@@ -32,11 +32,11 @@ export const Sec3 = () => {
       title: "Tailwind",
     },
     {
-      icon:<Image src={next} className="w-full scale-75" alt="" />, 
+      icon: <Image src={next} className="w-full sm:scale-1 scale-75" alt="" />,
       title: "NextJS",
     },
-     {
-      icon: <SiAngularjs size={"85%"} />,
+    {
+      icon: <SiAngularjs size={"85%"} className="sm:scale-1 scale-75" />,
       title: "Angularjs",
     },
   ];
@@ -51,7 +51,7 @@ export const Sec3 = () => {
             <p>Experinced With</p>
             <div className="absolute left-0 top-0 triangle-topleft"></div>
           </div>
-          <div className="flex  flex-col sm:flex-row flex-wrap">
+          <div className="flex flex-col sm:flex-row flex-wrap">
             {skills.map((skill) => {
               return (
                 <Skill key={skill.title} title={skill.title}>
