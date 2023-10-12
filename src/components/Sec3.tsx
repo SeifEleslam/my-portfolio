@@ -24,7 +24,7 @@ export const Sec3 = () => {
       title: "JavaSCript",
     },
     {
-      icon: <Image src={ts} className="w-full sm:scale-75" alt="" />,
+      icon: <Image src={ts} className="w-full scale-75" alt="" />,
       title: "TypeScript",
     },
     {
