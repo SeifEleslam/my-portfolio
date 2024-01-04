@@ -48,7 +48,7 @@ export const Sec2 = () => {
                   y: -10,
                   boxShadow: "0 10px 50px -10px #ad0b00",
                 }}
-                href={"resume.pdf?"}
+                href={"SeifEleslam Gouda (Frontend Developer).pdf?"}
                 target="_blank"
                 className="mx-auto md:mx-0 space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#ad0b00] "
               >
@@ -64,7 +64,7 @@ export const Sec2 = () => {
                   y: -10,
                   boxShadow: "0 10px 50px -10px #0057bb",
                 }}
-                href={"resume.docx?"}
+                href={"SeifEleslam Gouda (Frontend Developer).docx?"}
                 target="_blank"
                 className="mx-auto md:mx-0 space-x-2 flex items-center w-fit  px-4 py-2 font-bold rounded-full bg-[#0057bb] "
               >
